@@ -1,37 +1,97 @@
-{% extends "base.html" %}
-{% block title %}Inscription{% endblock %}
-{% block content %}
-<div class="row justify-content-center">
-    <div class="col-md-6">
-        <div class="card">
-            <div class="card-header">Inscription</div>
-            <div class="card-body">
-                <form method="POST" action="{{ url_for('auth.register') }}">
-                    <div class="form-group">
-                        <label for="username">Nom d'utilisateur</label>
-                        <input type="text" class="form-control" id="username" name="username" required>
+<head>
+    <!-- Meta Tags et Feuilles de Style -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Best Bootstrap Admin Dashboards">
+    <meta name="author" content="Bootstrap Gallery">
+    <link rel="canonical" href="https://www.bootstrap.gallery/">
+    <meta property="og:url" content="https://www.bootstrap.gallery">
+    <meta property="og:title" content="Admin Templates - Dashboard Templates | Bootstrap Gallery">
+    <meta property="og:description" content="Marketplace for Bootstrap Admin Dashboards">
+    <meta property="og:type" content="Website">
+    <meta property="og:site_name" content="Bootstrap Gallery">
+    <title>Bootstrap Admin Dashboards</title>
+
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/animate.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/fonts/bootstrap/bootstrap-icons.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.min.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/images/yuk.svg') }}">
+
+    <style>
+        input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus,
+        textarea:-webkit-autofill, textarea:-webkit-autofill:hover, textarea:-webkit-autofill:focus,
+        select:-webkit-autofill, select:-webkit-autofill:hover, select:-webkit-autofill:focus {
+            box-shadow: 0 0 0px 100px rgb(255 255 255 / 80%) inset;
+        }
+
+        body.login-container {
+            flex-wrap: wrap;
+            justify-content: space-between;
+            background: white;
+            padding: 0 20px;
+        }
+
+        .svg img {
+            width: 792;
+            height: 537;
+        }
+    </style>
+</head>
+
+<body class="login-container">
+    <div class="svg">
+        <img src="{{ url_for('static', filename='assets/images/tof.svg') }}" alt="Vico Admin" />
+    </div>
+
+    {% block content %}
+    <form action="{{ url_for('auth.register') }}" method="post">
+        <div class="login-box" style="box-shadow: none;">
+            <div class="login-form">
+                <a href="index.html" class="login-logo">
+                    <img src="{{ url_for('static', filename='assets/images/yuk.svg') }}" alt="Vico Admin" />
+                </a>
+                <div class="login-welcome" style="margin-bottom: 10;">
+                    <span style="font-weight: 800; font-size: 27px;">Bienvenue</span>
+                </div>
+                <div class="login-welcome">
+                    <span>Veuillez entrer les informations d’inscription</span>
+                </div>
+                <div class="mb-3">
+                    <label for="role" class="form-label">Rôle</label>
+                    <select class="form-select" id="role" name="role" aria-label="Sélectionnez le rôle" required>
+                        <option value="admin">Admin</option>
+                        <option value="doctor">Docteur</option>
+                        <option value="nurse">Infirmière</option>
+                        <option value="secretary">Secrétaire</option>
+                        <option value="patient">Patient</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Nom d'utilisateur</label>
+                    <input type="text" id="username" name="username" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <div class="d-flex justify-content-between">
+                        <label class="form-label">Mot de passe</label>
                     </div>
-                    <div class="form-group">
-                        <label for="password">Mot de passe</label>
-                        <input type="password" class="form-control" id="password" name="password" required>
+                    <input type="password" id="password" name="password" class="form-control" required>
+                </div>
+                <div class="login-form-actions">
+                    <button type="submit" class="btn">
+                        <span class="icon"><i class="bi bi-arrow-right-circle"></i></span> creer un compte
+                    </button>
+                </div>
+                <div class="mb-3">
+                    <div class="d-flex justify-content-between">
+{#                        <a href="forgot-password.html" class="btn-link ml-auto">Mot de passe oublié ?</a>#}
                     </div>
-                    <div class="form-group">
-                        <label for="role">Rôle</label>
-                        <select class="form-control" id="role" name="role" required>
-                            <option value="admin">Admin</option>
-                            <option value="doctor">Docteur</option>
-                            <option value="nurse">Infirmière</option>
-                            <option value="secretary">Secrétaire</option>
-                            <option value="patient">Patient</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-block">Inscription</button>
-                </form>
-            </div>
-            <div class="card-footer text-center">
-                <p>Vous avez déjà un compte ? <a href="{{ url_for('auth.login') }}">Connectez-vous ici</a>.</p>
+                </div>
             </div>
         </div>
-    </div>
-</div>
-{% endblock %}
+    </form>
+    {% endblock %}
+
+    <!-- Main JavaScript -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>

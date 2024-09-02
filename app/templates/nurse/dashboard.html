@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %}Tableau de Bord{% endblock %}
+{% block content %}
+<div class="container mt-4">
+    <h1>Bienvenue, {{ username }}!</h1>
+    <p>Vous êtes une infirmiere.</p>
+</div>
+{% endblock %}
