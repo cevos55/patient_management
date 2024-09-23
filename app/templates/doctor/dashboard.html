@@ -1,8 +1,39 @@
 {% extends "base.html" %}
-{% block title %}Tableau de Bord{% endblock %}
+{% block title %}Dashboard Docteur{% endblock %}
 {% block content %}
 <div class="container mt-4">
-    <h1>Bienvenue, {{ username }}!</h1>
-    <p>Vous êtes un doctor.</p>
+    <h1>Dashboard Docteur</h1>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card text-white bg-primary mb-3">
+                <div class="card-header">Patients</div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ patient_count['patient_count'] }}</h5>
+                    <p class="card-text">Nombre total de patients.</p>
+                    <a href="{{ url_for('doctor.list_patients') }}" class="btn btn-light">Voir les patients</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-white bg-success mb-3">
+                <div class="card-header">Rendez-vous</div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ appointment_count['appointment_count'] }}</h5>
+                    <p class="card-text">Nombre total de rendez-vous.</p>
+                    <a href="{{ url_for('doctor.manage_appointments') }}" class="btn btn-light">Gérer les rendez-vous</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card mb-3">
+                <div class="card-header">Historique des Rendez-vous</div>
+                <div class="card-body">
+                    <a href="{{ url_for('doctor.view_appointment_history') }}" class="btn btn-primary">Voir l'Historique des Rendez-vous</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </div>
 {% endblock %}
