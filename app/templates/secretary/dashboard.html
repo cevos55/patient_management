@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, shrink-to-fit=no"
+		/>
+
+		<!-- Meta -->
+		<meta name="description" content="Best Bootstrap Admin Dashboards" />
+		<meta name="author" content="Bootstrap Gallery" />
+		<link rel="canonical" href="https://www.bootstrap.gallery/" />
+		<meta property="og:url" content="https://www.bootstrap.gallery" />
+		<meta
+			property="og:title"
+			content="Admin Templates - Dashboard Templates | Bootstrap Gallery"
+		/>
+		<meta
+			property="og:description"
+			content="Marketplace for Bootstrap Admin Dashboards"
+		/>
+		<meta property="og:type" content="Website" />
+		<meta property="og:site_name" content="Bootstrap Gallery" />
+		<link rel="shortcut icon" href="{{ url_for('static', filename='assets/images/yuk.svg') }}">
+		<!-- Title -->
+		<title>yuk up</title>
+
+		<!-- *************
+			************ Common Css Files *************
+		************ -->
+
+		<!-- Animated css -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/animate.css') }}">
+		<!-- Bootstrap font icons css -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='assets/fonts/bootstrap/bootstrap-icons.css') }}">
+		<!-- Main css -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.min.css') }}">
+
+		<!-- *************
+			************ Vendor Css Files *************
+		************ -->
+
+		<!-- Scrollbar CSS -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='assets/vendor/overlay-scroll/OverlayScrollbars.min.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/cssCustom.css') }}">
+
+	</head>
+
+	<body>
+		<!-- Loading wrapper start -->
+		<div id="loading-wrapper">
+			<div class="spinner">
+				<div class="line1"></div>
+				<div class="line2"></div>
+				<div class="line3"></div>
+				<div class="line4"></div>
+				<div class="line5"></div>
+				<div class="line6"></div>
+			</div>
+		</div>
+		<!-- Loading wrapper end -->
+
+		<!-- Page wrapper start -->
+		<div class="page-wrapper">
+			<!-- Sidebar wrapper start -->
+			<nav class="sidebar-wrapper">
+				<!-- Sidebar brand starts -->
+				<div class="sidebar-brand">
+					<a href="index.html" class="logo">
+						<img src="{{ url_for('static', filename='assets/images/yuk.svg') }}">
+
+					</a>
+				</div>
+				<!-- Sidebar brand starts -->
+
+				<!-- Sidebar menu starts -->
+				<div class="sidebar-menu">
+					<div class="sidebarMenuScroll">
+						<ul>
+							<li>
+								<a href="accueil.php">
+									<i class="bi bi-house"></i>
+									<span class="menu-text">Accueil</span>
+								</a>
+							</li>
+
+							<li class="sidebar-dropdown">
+								<a href="#">
+									<i class="bi bi-person"></i>
+									<span class="menu-text">Patient</span>
+								</a>
+								<div class="sidebar-submenu">
+									<ul>
+										<li>
+											<a href="{{ url_for('secretary.liste_appointments') }}">List</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+
+							<li class="sidebar-dropdown">
+								<a href="#">
+									<i class="bi bi-people"></i>
+									<span class="menu-text">appointment</span>
+								</a>
+								<div class="sidebar-submenu">
+									<ul>
+										<li>
+                                            <a href="{{ url_for('secretary.liste_appointments') }}">List</a>
+                                        </li>
+
+										<li>
+                                            <a href="{{ url_for('secretary.planification_appointments') }}">Planification</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+
+							<li class="">
+								<a href="#">
+									<i class="bi bi-door-open"></i>
+									<span class="menu-text">chambre et lit</span>
+								</a>
+							</li>
+
+							<li class="">
+								<a href="#">
+									<i class="bi bi-file-text"></i>
+									<span class="menu-text">Facturation</span>
+								</a>
+							</li>
+
+							<li class="sidebar-dropdown">
+								<a href="#">
+									<i class="bi bi-send"></i>
+									<span class="menu-text">Messageri</span>
+								</a>
+								<div class="sidebar-submenu">
+									<ul>
+										<li>
+											<a href="#">Nouveau message</a>
+										</li>
+										<li>
+											<a href="#">Message Recu</a>
+										</li>
+										<li>
+											<a href="#">Message Envoyer</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="">
+								<a href="{{ url_for('auth.logout') }}">
+									<i class="bi bi-box-arrow-in-right"></i>
+									<span class="menu-text">Log out</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- Sidebar menu ends -->
+			</nav>
+			<!-- Sidebar wrapper end -->
+
+			<!-- *************
+				************ Main container start *************
+			************* -->
+			<div class="main-container">
+				<!-- Page header starts -->
+				<div class="page-header">
+					<div class="toggle-sidebar" id="toggle-sidebar">
+						<i class="bi bi-list"></i>
+					</div>
+
+					<!-- Breadcrumb start -->
+					<ol class="breadcrumb d-md-flex d-none">
+						<li class="breadcrumb-item">
+							<i class="bi bi-house"></i>
+							<a href="index.html">Home</a>
+						</li>
+					</ol>
+					<!-- Breadcrumb end -->
+
+					<!-- Header actions ccontainer start -->
+					<div class="header-actions-container">
+						<!-- Search container start -->
+
+						<!-- Search container end -->
+
+						<!-- Leads start -->
+
+						<!-- Leads end -->
+
+						<!-- Header actions start -->
+						<ul class="header-actions">
+							<li class="dropdown">
+								<a
+									href="#"
+									id="userSettings"
+									class="user-settings"
+									data-toggle="dropdown"
+									aria-haspopup="true"
+								>
+									<span class="user-name d-none d-md-block"
+										>Abigale Heaney</span
+									>
+									<span class="avatar">
+										<img src="{{ url_for('static', filename='assets/images/user.png') }}">
+
+										<span class="status online"></span>
+									</span>
+								</a>
+								<div
+									class="dropdown-menu dropdown-menu-end"
+									aria-labelledby="userSettings"
+								>
+									<div class="header-profile-actions">
+										<a href="profile.html">Profile</a>
+										<a href="account-settings.html">Settings</a>
+										<a href="login.html">Logout</a>
+									</div>
+								</div>
+							</li>
+						</ul>
+						<!-- Header actions end -->
+					</div>
+					<!-- Header actions ccontainer end -->
+				</div>
+				<!-- Page header ends -->
+
+				<!-- Content wrapper scroll start -->
+				<div class="content-wrapper-scroll">
+					<!-- Content wrapper start -->
+					<div class="content-wrapper">
+						<!-- Row start -->
+						<div class="row">
+							<div class="col-xxl-3 col-sm-4 col-12">
+								<div class="stats-tile">
+									<div class="sale-icon shade-red">
+										<i class="bi bi-pie-chart"></i>
+									</div>
+									<div class="sale-details">
+										<h3 class="text-red">25</h3>
+										<p>register patient</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-xxl-3 col-sm-4 col-12">
+								<div class="stats-tile">
+									<div class="sale-icon shade-blue">
+										<i class="bi bi-emoji-smile"></i>
+									</div>
+									<div class="sale-details">
+										<h3 class="text-blue">12</h3>
+										<p>Admitted patients</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-xxl-3 col-sm-4 col-12">
+								<div class="stats-tile">
+									<div class="sale-icon shade-yellow">
+										<i class="bi bi-box-seam"></i>
+									</div>
+									<div class="sale-details">
+										<h3 class="text-yellow">07</h3>
+										<p>appointment confirmed</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-xxl-3 col-sm-4 col-12">
+								<div class="stats-tile">
+									<div class="sale-icon shade-green">
+										<i class="bi bi-handbag"></i>
+									</div>
+									<div class="sale-details">
+										<h3 class="text-green">01</h3>
+										<p>appointment canceled</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-xxl-3 col-sm-4 col-12">
+								<div class="stats-tile">
+									<div class="sale-icon shade-green">
+										<i class="bi bi-handbag"></i>
+									</div>
+									<div class="sale-details">
+										<h3 class="text-green">18</h3>
+										<p>avaible rooms</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-xxl-3 col-sm-4 col-12">
+								<div class="stats-tile">
+									<div class="sale-icon shade-green">
+										<i class="bi bi-handbag"></i>
+									</div>
+									<div class="sale-details">
+										<h3 class="text-green">5</h3>
+										<p>Unread message</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Row end -->
+						<!-- Row start -->
+						<div class="row">
+							<div class="col-xxl-4 col-sm-6 col-12">
+								<div class="card">
+									<div class="card-header">
+										<div class="card-title">statistique</div>
+									</div>
+									<div class="card-body">
+										<div class="scroll370">
+											<div class="income-stats-container">
+												<div class="income-stats">
+													<div class="income-graph">
+														<div id="overallSales" class="svg-container"></div>
+													</div>
+													<div class="income-info">
+														<h3>75<sup>%</sup></h3>
+														<p>daily register</p>
+													</div>
+													<div class="income-high-low">
+														18%
+														<span class="bi bi-caret-up-fill text-green"></span>
+													</div>
+												</div>
+												<div class="income-stats">
+													<div class="income-graph">
+														<div
+															id="overallExpenses"
+															class="svg-container"
+														></div>
+													</div>
+													<div class="income-info">
+														<h3>33<sup>%</sup></h3>
+														<p>weekly register</p>
+													</div>
+													<div class="income-high-low">
+														7%
+														<span class="bi bi-caret-down-fill text-red"></span>
+													</div>
+												</div>
+												<div class="income-stats">
+													<div class="income-graph">
+														<div id="overallIncome" class="svg-container"></div>
+													</div>
+													<div class="income-info">
+														<h3>42<sup>%</sup></h3>
+														<p>monthly register</p>
+													</div>
+													<div class="income-high-low">
+														21%
+														<span class="bi bi-caret-up-fill text-green"></span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xxl-4 col-sm-6 col-12">
+								<div class="card">
+									<div class="card-header">
+										<div class="card-title">appointment</div>
+									</div>
+									<div class="card-body">
+										<div class="scroll370">
+											<ul class="tickets-container">
+												<li>
+													<img class="avatar" alt="Admin Dashboards" src="{{ url_for('static', filename='assets/images/user.png') }}">
+													<div class="ticket-details">
+														<h4>Chandni Issac</h4>
+														<h5>Rendez-Vous 05/12/2021</h5>
+													</div>
+													<div class="ticket-status">
+														<span class="badge shade-bdr-green">Completed</span>
+													</div>
+												</li>
+												<li>
+													<img class="avatar" alt="Admin Dashboards" src="{{ url_for('static', filename='assets/images/user5.png') }}">
+
+
+													<div class="ticket-details">
+														<h4>Donna Miller</h4>
+														<h5>Rendez-Vous 05/12/2021</h5>
+													</div>
+													<div class="ticket-status">
+														<span class="badge shade-bdr-blue">pending</span>
+													</div>
+												</li>
+												<li>
+													<img class="avatar" alt="Admin Dashboards" src="{{ url_for('static', filename='assets/images/user4.png') }}">
+
+
+													<div class="ticket-details">
+														<h4>William Brown</h4>
+														<h5>Rendez-Vous 05/12/2021</h5>
+													</div>
+													<div class="ticket-status">
+														<span class="badge shade-bdr-blue">pending</span>
+													</div>
+												</li>
+												<li>
+													<img class="avatar" alt="Admin Dashboards" src="{{ url_for('static', filename='assets/images/user3.png') }}">
+
+													<div class="ticket-details">
+														<h4>Laura Morgan</h4>
+														<h5>Rendez-Vous 05/12/2021</h5>
+													</div>
+													<div class="ticket-status">
+														<span class="badge shade-bdr-blue">pending</span>
+													</div>
+												</li>
+												<li>
+													<img class="avatar" alt="Admin Dashboards" src="{{ url_for('static', filename='assets/images/user2.png') }}">
+
+													<div class="ticket-details">
+														<h4>Nancy Bell</h4>
+														<h5>Rendez-Vous 05/12/2021</h5>
+													</div>
+													<div class="ticket-status">
+														<span class="badge shade-bdr-red">rejected</span>
+													</div>
+												</li>
+												<li>
+													<img class="avatar" alt="Admin Dashboards" src="{{ url_for('static', filename='assets/images/user4.png') }}">
+
+													<div class="ticket-details">
+														<h4>Raymond Miller</h4>
+														<h5>Rendez-Vous 05/12/2021</h5>
+													</div>
+													<div class="ticket-status">
+														<span class="badge shade-bdr-red">rejected</span>
+													</div>
+												</li>
+												<li>
+													<img class="avatar" alt="Admin Dashboards" src="{{ url_for('static', filename='assets/images/user3.png') }}">
+
+													<div class="ticket-details">
+														<h4>Jacob White</h4>
+														<h5>Rendez-Vous 05/12/2021</h5>
+													</div>
+													<div class="ticket-status">
+														<span class="badge shade-bdr-red">rejected</span>
+													</div>
+												</li>
+												<li>
+													<img class="avatar" alt="Admin Dashboards" src="{{ url_for('static', filename='assets/images/user5.png') }}">
+
+													<div class="ticket-details">
+														<h4>Grace Cooper</h4>
+														<h5>Rendez-Vous 05/12/2021</h5>
+													</div>
+													<div class="ticket-status">
+														<span class="badge shade-bdr-red">rejected</span>
+													</div>
+												</li>
+												<li>
+													<img class="avatar" alt="Admin Dashboards" src="{{ url_for('static', filename='assets/images/user.png') }}">
+
+													<div class="ticket-details">
+														<h4>Michelle Taylor</h4>
+														<h5>Rendez-Vous 05/12/2021</h5>
+													</div>
+													<div class="ticket-status">
+														<span class="badge shade-bdr-red">rejected</span>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xxl-4 col-sm-12 col-12">
+								<div class="card">
+									<div class="card-header">
+										<div class="card-title">digram of records</div>
+									</div>
+									<div class="card-body">
+										<div id="deals"></div>
+										<!-- Row start -->
+										<div class="row">
+											<div class="col-sm-6 col-6">
+												<div class="info-stats">
+													<h5>homme</h5>
+													<h3>32</h3>
+												</div>
+											</div>
+											<div class="col-sm-6 col-6">
+												<div class="info-stats">
+													<h5>femme</h5>
+													<h3>15</h3>
+												</div>
+											</div>
+										</div>
+										<!-- Row end -->
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Row end -->
+					</div>
+					<!-- Content wrapper end -->
+
+					<!-- App Footer start -->
+					<div class="app-footer">
+						<span>© Arise admin 2023</span>
+					</div>
+					<!-- App footer end -->
+				</div>
+				<!-- Content wrapper scroll end -->
+			</div>
+			<!-- *************
+				************ Main container end *************
+			************* -->
+		</div>
+		<!-- Page wrapper end -->
+
+		<!-- *************
+			************ Required JavaScript Files *************
+		************* -->
+		<!-- Required jQuery first, then Bootstrap Bundle JS -->
+
+		<!-- Apex Charts -->
+		<script src="{{ url_for('static', filename='assets/vendor/apex/apexcharts.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/js/jquery.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/js/bootstrap.bundle.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/js/modernizr.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/js/moment.js') }}"></script>
+
+
+
+		<!-- *************
+			************ Vendor Js Files *************
+		************* -->
+
+		<!-- Overlay Scroll JS -->
+		<script src="{{ url_for('static', filename='assets/vendor/overlay-scroll/jquery.overlayScrollbars.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/vendor/overlay-scroll/custom-scrollbar.js') }}"></script>
+
+
+
+		<!-- Apex Charts -->
+		<script src="{{ url_for('static', filename='assets/vendor/apex/custom/repotrs/byChannel.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/vendor/apex/custom/repotrs/byCountry.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/vendor/apex/custom/repotrs/byDevice.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/vendor/apex/custom/repotrs/orders.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/vendor/apex/custom/repotrs/results.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/vendor/apex/custom/repotrs/visitors.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/vendor/apex/custom/repotrs/demography.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/vendor/apex/custom/repotrs/deals.js') }}"></script>
+
+
+
+		<!-- Vector Maps -->
+		<script src="{{ url_for('static', filename='assets/vendor/jvectormap/jquery-jvectormap-2.0.5.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/vendor/jvectormap/world-mill-en.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/vendor/jvectormap/gdp-data.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/vendor/jvectormap/custom/world-map-markers.js') }}"></script>
+
+
+
+		<!-- Circleful -->
+		<script src="{{ url_for('static', filename='assets/vendor/circliful/circliful.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/vendor/circliful/circliful.custom.js') }}"></script>
+
+
+
+		<!-- Main Js Required -->
+		<script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+
+
+
+
+
+
+
+
+	</body>
+</html>
