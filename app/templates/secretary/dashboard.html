@@ -3,49 +3,47 @@
 	<head>
 		<!-- Required meta tags -->
 		<meta charset="utf-8" />
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1, shrink-to-fit=no"
-		/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
 		<!-- Meta -->
 		<meta name="description" content="Best Bootstrap Admin Dashboards" />
 		<meta name="author" content="Bootstrap Gallery" />
 		<link rel="canonical" href="https://www.bootstrap.gallery/" />
 		<meta property="og:url" content="https://www.bootstrap.gallery" />
-		<meta
-			property="og:title"
-			content="Admin Templates - Dashboard Templates | Bootstrap Gallery"
-		/>
-		<meta
-			property="og:description"
-			content="Marketplace for Bootstrap Admin Dashboards"
-		/>
+		<meta property="og:title" content="Admin Templates - Dashboard Templates | Bootstrap Gallery" />
+		<meta property="og:description" content="Marketplace for Bootstrap Admin Dashboards" />
 		<meta property="og:type" content="Website" />
 		<meta property="og:site_name" content="Bootstrap Gallery" />
-		<link rel="shortcut icon" href="{{ url_for('static', filename='assets/images/yuk.svg') }}">
+		<link rel="shortcut icon" href="{{ url_for('static', filename='assets/images/yuk.svg') }}" />
+
 		<!-- Title -->
-		<title>yuk up</title>
+		<title>yuk-up</title>
 
 		<!-- *************
 			************ Common Css Files *************
 		************ -->
 
 		<!-- Animated css -->
-		<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/animate.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/animate.css') }}" />
+
 		<!-- Bootstrap font icons css -->
-		<link rel="stylesheet" href="{{ url_for('static', filename='assets/fonts/bootstrap/bootstrap-icons.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='assets/fonts/bootstrap/bootstrap-icons.css') }}" />
+
 		<!-- Main css -->
-		<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.min.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.min.css') }}" />
 
 		<!-- *************
 			************ Vendor Css Files *************
 		************ -->
 
 		<!-- Scrollbar CSS -->
-		<link rel="stylesheet" href="{{ url_for('static', filename='assets/vendor/overlay-scroll/OverlayScrollbars.min.css') }}">
-		<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/cssCustom.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='assets/vendor/overlay-scroll/OverlayScrollbars.min.css') }}" />
 
+		<style>
+			.logs .log-list {
+				justify-content: left !important;
+			}
+		</style>
 	</head>
 
 	<body>
@@ -65,103 +63,7 @@
 		<!-- Page wrapper start -->
 		<div class="page-wrapper">
 			<!-- Sidebar wrapper start -->
-			<nav class="sidebar-wrapper">
-				<!-- Sidebar brand starts -->
-				<div class="sidebar-brand">
-					<a href="index.html" class="logo">
-						<img src="{{ url_for('static', filename='assets/images/yuk.svg') }}">
-
-					</a>
-				</div>
-				<!-- Sidebar brand starts -->
-
-				<!-- Sidebar menu starts -->
-				<div class="sidebar-menu">
-					<div class="sidebarMenuScroll">
-						<ul>
-							<li>
-								<a href="accueil.php">
-									<i class="bi bi-house"></i>
-									<span class="menu-text">Accueil</span>
-								</a>
-							</li>
-
-							<li class="sidebar-dropdown">
-								<a href="#">
-									<i class="bi bi-person"></i>
-									<span class="menu-text">Patient</span>
-								</a>
-								<div class="sidebar-submenu">
-									<ul>
-										<li>
-											<a href="{{ url_for('secretary.liste_appointments') }}">List</a>
-										</li>
-									</ul>
-								</div>
-							</li>
-
-							<li class="sidebar-dropdown">
-								<a href="#">
-									<i class="bi bi-people"></i>
-									<span class="menu-text">appointment</span>
-								</a>
-								<div class="sidebar-submenu">
-									<ul>
-										<li>
-                                            <a href="{{ url_for('secretary.liste_appointments') }}">List</a>
-                                        </li>
-
-										<li>
-                                            <a href="{{ url_for('secretary.planification_appointments') }}">Planification</a>
-										</li>
-									</ul>
-								</div>
-							</li>
-
-							<li class="">
-								<a href="#">
-									<i class="bi bi-door-open"></i>
-									<span class="menu-text">chambre et lit</span>
-								</a>
-							</li>
-
-							<li class="">
-								<a href="#">
-									<i class="bi bi-file-text"></i>
-									<span class="menu-text">Facturation</span>
-								</a>
-							</li>
-
-							<li class="sidebar-dropdown">
-								<a href="#">
-									<i class="bi bi-send"></i>
-									<span class="menu-text">Messageri</span>
-								</a>
-								<div class="sidebar-submenu">
-									<ul>
-										<li>
-											<a href="#">Nouveau message</a>
-										</li>
-										<li>
-											<a href="#">Message Recu</a>
-										</li>
-										<li>
-											<a href="#">Message Envoyer</a>
-										</li>
-									</ul>
-								</div>
-							</li>
-							<li class="">
-								<a href="{{ url_for('auth.logout') }}">
-									<i class="bi bi-box-arrow-in-right"></i>
-									<span class="menu-text">Log out</span>
-								</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<!-- Sidebar menu ends -->
-			</nav>
+			{{ render_sidebar()|safe }}
 			<!-- Sidebar wrapper end -->
 
 			<!-- *************
@@ -180,45 +82,75 @@
 							<i class="bi bi-house"></i>
 							<a href="index.html">Home</a>
 						</li>
+						<!-- <li class="breadcrumb-item breadcrumb-active" aria-current="page">
+							Sales
+						</li> -->
 					</ol>
 					<!-- Breadcrumb end -->
 
 					<!-- Header actions ccontainer start -->
 					<div class="header-actions-container">
 						<!-- Search container start -->
-
+						<div class="search-container">
+							<!-- Search input group start -->
+							<div class="input-group">
+								<input type="text" class="form-control" placeholder="Search anything" />
+								<button class="btn" type="button">
+									<i class="bi bi-search"></i>
+								</button>
+							</div>
+							<!-- Search input group end -->
+						</div>
 						<!-- Search container end -->
 
 						<!-- Leads start -->
-
+						<a href="orders.html" class="leads d-none d-xl-flex">
+							<div class="lead-details">You have <span class="count"> 21 </span> Notifications</div>
+							<span class="lead-icon"
+								><i class="bi bi-bell-fill animate__animated animate__swing animate__infinite infinite"></i
+								><b class="dot animate__animated animate__heartBeat animate__infinite"></b
+							></span>
+						</a>
 						<!-- Leads end -->
 
 						<!-- Header actions start -->
 						<ul class="header-actions">
+							<li class="dropdown d-none d-md-block">
+								<a href="#" id="countries" data-toggle="dropdown" aria-haspopup="true">
+									<img src="{{ url_for('static', filename='assets/images/flags/1x1/br.svg') }}" class="flag-img" alt="Admin Panels" />
+								</a>
+								<div class="dropdown-menu dropdown-menu-end mini" aria-labelledby="countries">
+									<div class="country-container">
+										<a href="index.html">
+											<img src="{{ url_for('static', filename='assets/images/flags/1x1/us.svg') }}" alt="Clean Admin Dashboards" />
+										</a>
+										<a href="index.html">
+											<img src="{{ url_for('static', filename='assets/images/flags/1x1/in.svg') }}" alt="Google Dashboards" />
+										</a>
+										<a href="index.html">
+											<img src="{{ url_for('static', filename='assets/images/flags/1x1/gb.svg') }}" alt="AI Admin Dashboards" />
+										</a>
+										<a href="index.html">
+											<img src="{{ url_for('static', filename='assets/images/flags/1x1/tr.svg') }}" alt="Modern Dashboards" />
+										</a>
+										<a href="index.html">
+											<img src="{{ url_for('static', filename='assets/images/flags/1x1/ca.svg') }}" alt="Best Admin Dashboards" />
+										</a>
+									</div>
+								</div>
+							</li>
 							<li class="dropdown">
-								<a
-									href="#"
-									id="userSettings"
-									class="user-settings"
-									data-toggle="dropdown"
-									aria-haspopup="true"
-								>
-									<span class="user-name d-none d-md-block"
-										>Abigale Heaney</span
-									>
+								<a href="#" id="userSettings" class="user-settings" data-toggle="dropdown" aria-haspopup="true">
+									<span class="user-name d-none d-md-block">Abigale Heaney</span>
 									<span class="avatar">
-										<img src="{{ url_for('static', filename='assets/images/user.png') }}">
-
+										<img src="{{ url_for('static', filename='assets/images/user.png') }}" alt="Admin Templates" />
 										<span class="status online"></span>
 									</span>
 								</a>
-								<div
-									class="dropdown-menu dropdown-menu-end"
-									aria-labelledby="userSettings"
-								>
+								<div class="dropdown-menu dropdown-menu-end" aria-labelledby="userSettings">
 									<div class="header-profile-actions">
-										<a href="profile.html">Profile</a>
-										<a href="account-settings.html">Settings</a>
+										<a href="secretaireProfile.html">Profile</a>
+										<a href="secretaireAccount-settings.html">Settings</a>
 										<a href="login.html">Logout</a>
 									</div>
 								</div>
@@ -236,74 +168,454 @@
 					<div class="content-wrapper">
 						<!-- Row start -->
 						<div class="row">
-							<div class="col-xxl-3 col-sm-4 col-12">
-								<div class="stats-tile">
-									<div class="sale-icon shade-red">
-										<i class="bi bi-pie-chart"></i>
+							<div class="col-xl-3 col-sm-6 col-12">
+								<div class="task-stats-container">
+									<div class="task-stats">
+										<div class="task-title">patient</div>
+										<div class="task-count">12</div>
 									</div>
-									<div class="sale-details">
-										<h3 class="text-red">25</h3>
-										<p>register patient</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-xxl-3 col-sm-4 col-12">
-								<div class="stats-tile">
-									<div class="sale-icon shade-blue">
-										<i class="bi bi-emoji-smile"></i>
-									</div>
-									<div class="sale-details">
-										<h3 class="text-blue">12</h3>
-										<p>Admitted patients</p>
+									<div class="task-stats-graph">
+										<div id="taskStats1"></div>
 									</div>
 								</div>
 							</div>
-							<div class="col-xxl-3 col-sm-4 col-12">
-								<div class="stats-tile">
-									<div class="sale-icon shade-yellow">
-										<i class="bi bi-box-seam"></i>
+							<div class="col-xl-3 col-sm-6 col-12">
+								<div class="task-stats-container">
+									<div class="task-stats">
+										<div class="task-title">appointment</div>
+										<div class="task-count">10</div>
 									</div>
-									<div class="sale-details">
-										<h3 class="text-yellow">07</h3>
-										<p>appointment confirmed</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-xxl-3 col-sm-4 col-12">
-								<div class="stats-tile">
-									<div class="sale-icon shade-green">
-										<i class="bi bi-handbag"></i>
-									</div>
-									<div class="sale-details">
-										<h3 class="text-green">01</h3>
-										<p>appointment canceled</p>
+									<div class="task-stats-graph">
+										<div id="taskStats2"></div>
 									</div>
 								</div>
 							</div>
-							<div class="col-xxl-3 col-sm-4 col-12">
-								<div class="stats-tile">
-									<div class="sale-icon shade-green">
-										<i class="bi bi-handbag"></i>
+							<div class="col-xl-3 col-sm-6 col-12">
+								<div class="task-stats-container">
+									<div class="task-stats">
+										<div class="task-title">Message</div>
+										<div class="task-count">27</div>
 									</div>
-									<div class="sale-details">
-										<h3 class="text-green">18</h3>
-										<p>avaible rooms</p>
+									<div class="task-stats-graph">
+										<div id="taskStats3"></div>
 									</div>
 								</div>
 							</div>
-							<div class="col-xxl-3 col-sm-4 col-12">
-								<div class="stats-tile">
-									<div class="sale-icon shade-green">
-										<i class="bi bi-handbag"></i>
+							<div class="col-xl-3 col-sm-6 col-12">
+								<div class="task-stats-container">
+									<div class="task-stats">
+										<div class="task-title">Bedroom</div>
+										<div class="task-count">15</div>
 									</div>
-									<div class="sale-details">
-										<h3 class="text-green">5</h3>
-										<p>Unread message</p>
+									<div class="task-stats-graph">
+										<div id="taskStats4"></div>
 									</div>
 								</div>
 							</div>
 						</div>
 						<!-- Row end -->
+
+						<!-- Row start -->
+						<div class="row">
+							<div class="col-xxl-9 col-sm-12 col-12">
+								<div class="card">
+									<div class="card-body">
+										<!-- Row start -->
+										<div class="row">
+											<div class="col-xxl-3 col-sm-4 col-12">
+												<div class="reports-summary">
+													<div class="reports-summary-block">
+														<i class="bi bi-circle-fill text-primary me-2"></i>
+														<div class="d-flex flex-column">
+															<h6>register patient</h6>
+															<h5>12</h5>
+														</div>
+													</div>
+													<div class="reports-summary-block">
+														<i class="bi bi-circle-fill text-success me-2"></i>
+														<div class="d-flex flex-column">
+															<h6>Admitted patients</h6>
+															<h5>78</h5>
+														</div>
+													</div>
+													<div class="reports-summary-block">
+														<i class="bi bi-circle-fill text-danger me-2"></i>
+														<div class="d-flex flex-column">
+															<h6>appointment confirmed</h6>
+															<h5>60</h5>
+														</div>
+													</div>
+													<div class="reports-summary-block">
+														<i class="bi bi-circle-fill text-warning me-2"></i>
+														<div class="d-flex flex-column">
+															<h6>appointment canceled</h6>
+															<h5>23</h5>
+														</div>
+													</div>
+													<button class="btn btn-info download-reports">View Reports</button>
+												</div>
+											</div>
+											<div class="col-xxl-9 col-sm-8 col-12">
+												<div class="row">
+													<div class="col-12">
+														<div class="graph-day-selection mt-2" role="group">
+															<button type="button" class="btn active">Today</button>
+															<button type="button" class="btn">Yesterday</button>
+															<button type="button" class="btn">7 days</button>
+															<button type="button" class="btn">15 days</button>
+															<button type="button" class="btn">30 days</button>
+														</div>
+													</div>
+													<div class="col-12">
+														<div id="revenueGraph"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- Row end -->
+									</div>
+								</div>
+							</div>
+							<div class="col-xxl-3 col-sm-12 col-12">
+								<div class="card">
+									<div class="card-header">
+										<div class="card-title">Bedroom</div>
+									</div>
+									<div class="card-body">
+										<div class="card-border m-0 h-100">
+											<div class="monthly-stats">
+												<h5>Bedroom report</h5>
+												<div class="avg-block">
+													<h4 class="avg-total text-red">14</h4>
+													<h6 class="avg-label">Occupy</h6>
+												</div>
+												<div class="avg-block">
+													<h4 class="avg-total text-green">35</h4>
+													<h6 class="avg-label">free</h6>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Row end -->
+
+						<!-- Row start -->
+						<div class="row">
+							<div class="col-12">
+								<div class="card">
+									<div class="card-header">
+										<div class="card-title">Appointments</div>
+									</div>
+									<div class="card-body">
+										<div class="table-responsive">
+											<table class="table v-middle">
+												<thead>
+													<tr>
+														<th>Patient</th>
+														<th>Statut</th>
+														<th>Date</th>
+														<th>Time</th>
+														<th>Number</th>
+														<th>Priority</th>
+														<th>Services</th>
+														<th>Doctor</th>
+														<th>Actions</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>
+															<div class="media-box">
+																<img
+																	src="{{ url_for('static', filename='assets/images/3d-illustration-person-with-glasses_23-2149436185-removebg-preview.png') }}"
+																	class="media-avatar"
+																	alt="Bootstrap Themes" />
+																<div class="media-box-body">
+																	<div class="text-truncate">Dolly Winters</div>
+																	<p>ID: #Arise00763</p>
+																</div>
+															</div>
+														</td>
+														<td>
+															<span class="badge shade-green min-70">Active</span>
+														</td>
+														<td>2022/01/25</td>
+
+														<td>
+															<span class="text-blue"><i class="bi bi-clock-fill"></i> 16h20</span>
+														</td>
+
+														<td>
+															<span class="text-green"><i class="bi bi-arrow-up-right text-green"> </i>+ 2</span>
+														</td>
+
+														<td>
+															<div class="logs">
+																<div class="log-list">
+																	<div class="log-dot"></div>
+																	<div class="log-title">Medium</div>
+																</div>
+															</div>
+														</td>
+														<td>consultation</td>
+
+														<td>Dr Dominick</td>
+														<td>
+															<div class="actions" data-bs-toggle="dropdown" aria-expanded="false">
+																<a href="#">
+																	<i class="bi bi-list text-green"></i>
+																</a>
+															</div>
+															<ul class="dropdown-menu">
+																<li>
+																	<a class="dropdown-item" href="#">Modifier</a>
+																</li>
+																<li>
+																	<hr class="dropdown-divider" />
+																</li>
+																<li>
+																	<a class="dropdown-item" href="#">Archiver</a>
+																</li>
+																<li>
+																	<hr class="dropdown-divider" />
+																</li>
+																<li>
+																	<a class="dropdown-item" href="#">Actions</a>
+																</li>
+															</ul>
+														</td>
+													</tr>
+
+													<tr>
+														<td>
+															<div class="media-box">
+																<img
+																	src="{{ url_for('static', filename='assets/images/3d-illustration-person-with-glasses_23-2149436185-removebg-preview.png') }}"
+																	class="media-avatar"
+																	alt="Bootstrap Themes" />
+																<div class="media-box-body">
+																	<div class="text-truncate">Dolly Winters</div>
+																	<p>ID: #Arise00763</p>
+																</div>
+															</div>
+														</td>
+														<td>
+															<span class="badge shade-green min-70">Active</span>
+														</td>
+														<td>2022/01/25</td>
+
+														<td>
+															<span class="text-blue"><i class="bi bi-clock-fill"></i> 16h20</span>
+														</td>
+
+														<td>
+															<span class="text-green"><i class="bi bi-arrow-up-right text-green"> </i>+ 2</span>
+														</td>
+
+														<td>
+															<div class="logs">
+																<div class="log-list">
+																	<div class="log-dot"></div>
+																	<div class="log-title">Medium</div>
+																</div>
+															</div>
+														</td>
+														<td>consultation</td>
+
+														<td>Dr Dominick</td>
+														<td>
+															<div class="actions" data-bs-toggle="dropdown" aria-expanded="false">
+																<a href="#">
+																	<i class="bi bi-list text-green"></i>
+																</a>
+															</div>
+															<ul class="dropdown-menu">
+																<li>
+																	<a class="dropdown-item" href="#">Modifier</a>
+																</li>
+																<li>
+																	<hr class="dropdown-divider" />
+																</li>
+																<li>
+																	<a class="dropdown-item" href="#">Archiver</a>
+																</li>
+																<li>
+																	<hr class="dropdown-divider" />
+																</li>
+																<li>
+																	<a class="dropdown-item" href="#">Actions</a>
+																</li>
+															</ul>
+														</td>
+													</tr>
+
+													<tr>
+														<td>
+															<div class="media-box">
+																<img
+																	src="{{ url_for('static', filename='assets/images/3d-illustration-person-with-glasses_23-2149436185-removebg-preview.png') }}"
+																	class="media-avatar"
+																	alt="Bootstrap Themes" />
+																<div class="media-box-body">
+																	<div class="text-truncate">Dolly Winters</div>
+																	<p>ID: #Arise00763</p>
+																</div>
+															</div>
+														</td>
+														<td>
+															<span class="badge shade-green min-70">Active</span>
+														</td>
+														<td>2022/01/25</td>
+
+														<td>
+															<span class="text-blue"><i class="bi bi-clock-fill"></i> 16h20</span>
+														</td>
+
+														<td>
+															<span class="text-green"><i class="bi bi-arrow-up-right text-green"> </i>+ 2</span>
+														</td>
+
+														<td>
+															<div class="logs">
+																<div class="log-list">
+																	<div class="log-dot"></div>
+																	<div class="log-title">Medium</div>
+																</div>
+															</div>
+														</td>
+														<td>consultation</td>
+
+														<td>Dr Dominick</td>
+														<td>
+															<div class="actions" data-bs-toggle="dropdown" aria-expanded="false">
+																<a href="#">
+																	<i class="bi bi-list text-green"></i>
+																</a>
+															</div>
+															<ul class="dropdown-menu">
+																<li>
+																	<a class="dropdown-item" href="#">Modifier</a>
+																</li>
+																<li>
+																	<hr class="dropdown-divider" />
+																</li>
+																<li>
+																	<a class="dropdown-item" href="#">Archiver</a>
+																</li>
+																<li>
+																	<hr class="dropdown-divider" />
+																</li>
+																<li>
+																	<a class="dropdown-item" href="#">Actions</a>
+																</li>
+															</ul>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Row end -->
+						<!-- Row start -->
+						<div class="row">
+							<div class="col-xxl-2 col-sm-4 col-12">
+								<div class="social-tile">
+									<div class="social-icon">
+										<i class="bi bi-people-fill"></i>
+									</div>
+									<div class="social-details">
+										<h1>21</h1>
+										<h5>
+											register <br />
+											patient
+										</h5>
+										<p class="growth high">Increased 21%</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-xxl-2 col-sm-4 col-12">
+								<div class="social-tile">
+									<div class="social-icon">
+										<i class="bi bi-mouse3-fill"></i>
+									</div>
+									<div class="social-details">
+										<h1>17</h1>
+										<h5>
+											Admitted <br />
+											patients
+										</h5>
+										<p class="growth high">Increased 12%</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-xxl-2 col-sm-4 col-12">
+								<div class="social-tile">
+									<div class="social-icon">
+										<i class="bi bi-signpost-split-fill"></i>
+									</div>
+									<div class="social-details">
+										<h1>06</h1>
+										<h5>
+											appointment <br />
+											confirmed
+										</h5>
+										<p class="growth low">Decreased 7%</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-xxl-2 col-sm-4 col-12">
+								<div class="social-tile">
+									<div class="social-icon">
+										<i class="bi bi-dpad-fill"></i>
+									</div>
+									<div class="social-details">
+										<h1>07</h1>
+										<h5>
+											appointment <br />
+											canceled
+										</h5>
+										<p class="growth high">Increased 18%</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-xxl-2 col-sm-4 col-12">
+								<div class="social-tile">
+									<div class="social-icon">
+										<i class="bi bi-youtube"></i>
+									</div>
+									<div class="social-details">
+										<h1>09</h1>
+										<h5>
+											avaible <br />
+											rooms
+										</h5>
+										<p class="growth high">Increased 37%</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-xxl-2 col-sm-4 col-12">
+								<div class="social-tile">
+									<div class="social-icon">
+										<i class="bi bi-instagram"></i>
+									</div>
+									<div class="social-details">
+										<h1>05</h1>
+										<h5>
+											Unread <br />
+											message
+										</h5>
+										<p class="growth high">Increased 22%</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Row end -->
+
 						<!-- Row start -->
 						<div class="row">
 							<div class="col-xxl-4 col-sm-6 col-12">
@@ -329,10 +641,7 @@
 												</div>
 												<div class="income-stats">
 													<div class="income-graph">
-														<div
-															id="overallExpenses"
-															class="svg-container"
-														></div>
+														<div id="overallExpenses" class="svg-container"></div>
 													</div>
 													<div class="income-info">
 														<h3>33<sup>%</sup></h3>
@@ -364,109 +673,102 @@
 							<div class="col-xxl-4 col-sm-6 col-12">
 								<div class="card">
 									<div class="card-header">
-										<div class="card-title">appointment</div>
+										<div class="card-title">Message</div>
 									</div>
 									<div class="card-body">
 										<div class="scroll370">
 											<ul class="tickets-container">
 												<li>
-													<img class="avatar" alt="Admin Dashboards" src="{{ url_for('static', filename='assets/images/user.png') }}">
+													<img src="{{ url_for('static', filename='assets/images/user.png') }}" class="avatar" alt="Admin Dashboards" />
 													<div class="ticket-details">
 														<h4>Chandni Issac</h4>
-														<h5>Rendez-Vous 05/12/2021</h5>
+														<h5>05/12/2021</h5>
 													</div>
 													<div class="ticket-status">
-														<span class="badge shade-bdr-green">Completed</span>
+														<span class="badge shade-bdr-green">02</span>
 													</div>
 												</li>
 												<li>
-													<img class="avatar" alt="Admin Dashboards" src="{{ url_for('static', filename='assets/images/user5.png') }}">
-
-
+													<img src="{{ url_for('static', filename='assets/images/user5.png') }}" class="avatar" alt="Admin Dashboards" />
 													<div class="ticket-details">
 														<h4>Donna Miller</h4>
-														<h5>Rendez-Vous 05/12/2021</h5>
+														<h5>05/12/2021</h5>
 													</div>
 													<div class="ticket-status">
-														<span class="badge shade-bdr-blue">pending</span>
+														<span class="badge shade-bdr-blue">01</span>
 													</div>
 												</li>
 												<li>
-													<img class="avatar" alt="Admin Dashboards" src="{{ url_for('static', filename='assets/images/user4.png') }}">
-
-
+													<img src="{{ url_for('static', filename='assets/images/user4.png') }}" class="avatar" alt="Admin Dashboards" />
 													<div class="ticket-details">
 														<h4>William Brown</h4>
-														<h5>Rendez-Vous 05/12/2021</h5>
+														<h5>05/12/2021</h5>
 													</div>
 													<div class="ticket-status">
-														<span class="badge shade-bdr-blue">pending</span>
+														<span class="badge shade-bdr-blue">05</span>
 													</div>
 												</li>
 												<li>
-													<img class="avatar" alt="Admin Dashboards" src="{{ url_for('static', filename='assets/images/user3.png') }}">
-
+													<img src="{{ url_for('static', filename='assets/images/user3.png') }}" class="avatar" alt="Admin Dashboards" />
 													<div class="ticket-details">
 														<h4>Laura Morgan</h4>
-														<h5>Rendez-Vous 05/12/2021</h5>
+														<h5>05/12/2021</h5>
 													</div>
 													<div class="ticket-status">
-														<span class="badge shade-bdr-blue">pending</span>
+														<span class="badge shade-bdr-blue">07</span>
 													</div>
 												</li>
 												<li>
-													<img class="avatar" alt="Admin Dashboards" src="{{ url_for('static', filename='assets/images/user2.png') }}">
-
+													<img
+														src="{{ url_for('static', filename='assets/images/3d-illustration-person-with-glasses_23-2149436185-removebg-preview.png') }}"
+														class="avatar"
+														alt="Admin Dashboards" />
 													<div class="ticket-details">
 														<h4>Nancy Bell</h4>
-														<h5>Rendez-Vous 05/12/2021</h5>
+														<h5>05/12/2021</h5>
 													</div>
 													<div class="ticket-status">
-														<span class="badge shade-bdr-red">rejected</span>
+														<span class="badge shade-bdr-red">08</span>
 													</div>
 												</li>
 												<li>
-													<img class="avatar" alt="Admin Dashboards" src="{{ url_for('static', filename='assets/images/user4.png') }}">
-
+													<img src="{{ url_for('static', filename='assets/images/user4.png') }}" class="avatar" alt="Admin Dashboards" />
 													<div class="ticket-details">
 														<h4>Raymond Miller</h4>
-														<h5>Rendez-Vous 05/12/2021</h5>
+														<h5>05/12/2021</h5>
 													</div>
 													<div class="ticket-status">
-														<span class="badge shade-bdr-red">rejected</span>
+														<span class="badge shade-bdr-red">09</span>
 													</div>
 												</li>
 												<li>
-													<img class="avatar" alt="Admin Dashboards" src="{{ url_for('static', filename='assets/images/user3.png') }}">
-
+													<img src="{{ url_for('static', filename='assets/images/user3.png') }}" class="avatar" alt="Admin Dashboards" />
 													<div class="ticket-details">
 														<h4>Jacob White</h4>
-														<h5>Rendez-Vous 05/12/2021</h5>
+														<h5>05/12/2021</h5>
 													</div>
 													<div class="ticket-status">
-														<span class="badge shade-bdr-red">rejected</span>
+														<span class="badge shade-bdr-red">11</span>
 													</div>
 												</li>
 												<li>
-													<img class="avatar" alt="Admin Dashboards" src="{{ url_for('static', filename='assets/images/user5.png') }}">
-
+													<img src="{{ url_for('static', filename='assets/images/user5.png') }}" class="avatar" alt="Admin Dashboards" />
 													<div class="ticket-details">
 														<h4>Grace Cooper</h4>
-														<h5>Rendez-Vous 05/12/2021</h5>
+														<h5>05/12/2021</h5>
 													</div>
 													<div class="ticket-status">
-														<span class="badge shade-bdr-red">rejected</span>
+														<span class="badge shade-bdr-red">14</span>
 													</div>
 												</li>
 												<li>
-													<img class="avatar" alt="Admin Dashboards" src="{{ url_for('static', filename='assets/images/user.png') }}">
-
+													<img src="{{ url_for('static', filename='assets/images/user.png') }}" class="avatar" alt="Admin Dashboards" />
 													<div class="ticket-details">
 														<h4>Michelle Taylor</h4>
-														<h5>Rendez-Vous 05/12/2021</h5>
+														<h5>05/12/2021</h5>
 													</div>
 													<div class="ticket-status">
-														<span class="badge shade-bdr-red">rejected</span>
+														<span class="badge shade-bdr-red">15</span>
 													</div>
 												</li>
 											</ul>
@@ -477,7 +779,7 @@
 							<div class="col-xxl-4 col-sm-12 col-12">
 								<div class="card">
 									<div class="card-header">
-										<div class="card-title">digram of records</div>
+										<div class="card-title">register genre</div>
 									</div>
 									<div class="card-body">
 										<div id="deals"></div>
@@ -523,15 +825,10 @@
 			************ Required JavaScript Files *************
 		************* -->
 		<!-- Required jQuery first, then Bootstrap Bundle JS -->
-
-		<!-- Apex Charts -->
-		<script src="{{ url_for('static', filename='assets/vendor/apex/apexcharts.min.js') }}"></script>
 		<script src="{{ url_for('static', filename='assets/js/jquery.min.js') }}"></script>
 		<script src="{{ url_for('static', filename='assets/js/bootstrap.bundle.min.js') }}"></script>
 		<script src="{{ url_for('static', filename='assets/js/modernizr.js') }}"></script>
 		<script src="{{ url_for('static', filename='assets/js/moment.js') }}"></script>
-
-
 
 		<!-- *************
 			************ Vendor Js Files *************
@@ -541,9 +838,38 @@
 		<script src="{{ url_for('static', filename='assets/vendor/overlay-scroll/jquery.overlayScrollbars.min.js') }}"></script>
 		<script src="{{ url_for('static', filename='assets/vendor/overlay-scroll/custom-scrollbar.js') }}"></script>
 
-
+		<!-- Apex Charts -->
+		<script src="{{ url_for('static', filename='assets/vendor/apex/apexcharts.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/vendor/apex/custom/sales/salesGraph.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/vendor/apex/custom/sales/revenueGraph.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/vendor/apex/custom/sales/taskGraph.js') }}"></script>
 
 		<!-- Apex Charts -->
+		<script src="{{ url_for('static', filename='assets/vendor/apex/apexcharts.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/vendor/apex/custom/widgets/graph1.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/vendor/apex/custom/widgets/graph2.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/vendor/apex/custom/widgets/graph3.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/vendor/apex/custom/widgets/graph4.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/vendor/apex/custom/widgets/graph5.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/vendor/apex/custom/widgets/graph6.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/vendor/apex/custom/widgets/graph7.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/vendor/apex/custom/widgets/graph8.js') }}"></script>
+
+		<!-- jVector Maps -->
+		<script src="{{ url_for('static', filename='assets/vendor/jvectormap/jquery-jvectormap-2.0.5.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/vendor/jvectormap/gdp-data.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/vendor/jvectormap/world-mill-en.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/vendor/jvectormap/africa-mill.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/vendor/jvectormap/europe-mill.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/vendor/jvectormap/custom/map-europe.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/vendor/jvectormap/custom/map-africa.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/vendor/jvectormap/custom/world-map-markers2.js') }}"></script>
+
+		<!-- jQcloud Keywords -->
+		<script src="{{ url_for('static', filename='assets/vendor/tagsCloud/tagsCloud.js') }}"></script>
+
+		<!-- Apex Charts -->
+		<script src="{{ url_for('static', filename='assets/vendor/apex/apexcharts.min.js') }}"></script>
 		<script src="{{ url_for('static', filename='assets/vendor/apex/custom/repotrs/byChannel.js') }}"></script>
 		<script src="{{ url_for('static', filename='assets/vendor/apex/custom/repotrs/byCountry.js') }}"></script>
 		<script src="{{ url_for('static', filename='assets/vendor/apex/custom/repotrs/byDevice.js') }}"></script>
@@ -553,70 +879,17 @@
 		<script src="{{ url_for('static', filename='assets/vendor/apex/custom/repotrs/demography.js') }}"></script>
 		<script src="{{ url_for('static', filename='assets/vendor/apex/custom/repotrs/deals.js') }}"></script>
 
-
-
 		<!-- Vector Maps -->
 		<script src="{{ url_for('static', filename='assets/vendor/jvectormap/jquery-jvectormap-2.0.5.min.js') }}"></script>
 		<script src="{{ url_for('static', filename='assets/vendor/jvectormap/world-mill-en.js') }}"></script>
 		<script src="{{ url_for('static', filename='assets/vendor/jvectormap/gdp-data.js') }}"></script>
 		<script src="{{ url_for('static', filename='assets/vendor/jvectormap/custom/world-map-markers.js') }}"></script>
 
-
-
 		<!-- Circleful -->
 		<script src="{{ url_for('static', filename='assets/vendor/circliful/circliful.min.js') }}"></script>
 		<script src="{{ url_for('static', filename='assets/vendor/circliful/circliful.custom.js') }}"></script>
 
-
-
 		<!-- Main Js Required -->
 		<script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class="col-xxl-4 col-sm-12 col-12">
-								<div class="card">
-									<div class="card-header">
-										<div class="card-title">digram of records</div>
-									</div>
-									<div class="card-body">
-										<div id="deals"></div>
-										<!-- Row start -->
-										<div class="row">
-											<div class="col-sm-6 col-6">
-												<div class="info-stats">
-													<h5>homme</h5>
-													<h3>32</h3>
-												</div>
-											</div>
-											<div class="col-sm-6 col-6">
-												<div class="info-stats">
-													<h5>femme</h5>
-													<h3>15</h3>
-												</div>
-											</div>
-										</div>
-										<!-- Row end -->
-									</div>
-								</div>
-							</div>
 	</body>
 </html>

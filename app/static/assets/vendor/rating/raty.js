@@ -36,19 +36,12 @@
 					methods._adjustPrecision.call(this);
 				}
 
-				this.opt.number = methods._between(
-					this.opt.number,
-					0,
-					this.opt.numberMax
-				);
+				this.opt.number = methods._between(this.opt.number, 0, this.opt.numberMax);
 
 				this.opt.path = this.opt.path || "";
 
-				if (
-					this.opt.path &&
-					this.opt.path.charAt(this.opt.path.length - 1) !== "/"
-				) {
-					this.opt.path += "/";
+				if (this.opt.path && this.opt.path.charAt(this.opt.path.length - 1) !== "/") {
+					this.opt.path = "/";
 				}
 
 				this.stars = methods._createStars.call(this);
@@ -57,9 +50,7 @@
 				methods._apply.call(this, this.opt.score);
 
 				var space = this.opt.space ? 4 : 0,
-					width =
-						this.opt.width ||
-						this.opt.number * this.opt.size + this.opt.number * space;
+					width = this.opt.width || this.opt.number * this.opt.size + this.opt.number * space;
 
 				if (this.opt.cancel) {
 					this.cancel = methods._createCancel.call(this);
@@ -121,9 +112,7 @@
 				that = $(self);
 
 			self.stars.on("click.raty", function (evt) {
-				self.score.val(
-					self.opt.half || self.opt.precision ? that.data("score") : this.alt
-				);
+				self.score.val(self.opt.half || self.opt.precision ? that.data("score") : this.alt);
 
 				if (self.opt.click) {
 					self.opt.click.call(self, parseFloat(self.score.val()), evt);
@@ -190,9 +179,7 @@
 				var score = parseInt(this.alt, 10);
 
 				if (self.opt.half) {
-					var position = parseFloat(
-							(evt.pageX - $(this).offset().left) / self.opt.size
-						),
+					var position = parseFloat((evt.pageX - $(this).offset().left) / self.opt.size),
 						plus = position > 0.5 ? 1 : 0.5;
 
 					score = score - 1 + plus;
@@ -330,9 +317,7 @@
 					icon = "starOff";
 				}
 
-				this.stars
-					.eq(Math.ceil(score) - 1)
-					.attr("src", this.opt.path + this.opt[icon]);
+				this.stars.eq(Math.ceil(score) - 1).attr("src", this.opt.path + this.opt[icon]);
 			} // Full down: [x.00 .. x.25]
 		},
 		_target: function (score, evt) {
@@ -377,10 +362,7 @@
 			}
 		},
 		_unlock: function () {
-			$(this)
-				.data("readonly", false)
-				.css("cursor", "pointer")
-				.removeAttr("title");
+			$(this).data("readonly", false).css("cursor", "pointer").removeAttr("title");
 
 			this.score.removeAttr("readonly", "readonly");
 
@@ -406,10 +388,7 @@
 					methods._apply.call(this, score);
 
 					if (!this.opt.click) {
-						methods._error.call(
-							this,
-							'You must add the "click: function(score, evt) { }" callback.'
-						);
+						methods._error.call(this, 'You must add the "click: function(score, evt) { }" callback.');
 					}
 
 					this.opt.click.call(this, score, $.Event("click"));
@@ -424,11 +403,7 @@
 					raw = that.data("raw");
 
 				if (raw) {
-					that
-						.off(".raty")
-						.empty()
-						.css({ cursor: raw.style.cursor, width: raw.style.width })
-						.removeData("readonly");
+					that.off(".raty").empty().css({ cursor: raw.style.cursor, width: raw.style.width }).removeData("readonly");
 				} else {
 					that.data("raw", that.clone()[0]);
 				}
@@ -468,9 +443,7 @@
 			return methods.set.call(this, {});
 		},
 		score: function () {
-			return arguments.length
-				? methods.setScore.apply(this, arguments)
-				: methods.getScore.call(this);
+			return arguments.length ? methods.setScore.apply(this, arguments) : methods.getScore.call(this);
 		},
 		set: function (settings) {
 			return this.each(function () {
@@ -493,10 +466,7 @@
 
 	$.fn.raty = function (method) {
 		if (methods[method]) {
-			return methods[method].apply(
-				this,
-				Array.prototype.slice.call(arguments, 1)
-			);
+			return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
 		} else if (typeof method === "object" || !method) {
 			return methods.init.apply(this, arguments);
 		} else {
@@ -529,9 +499,9 @@
 		single: false,
 		size: 20,
 		space: true,
-		starHalf: "../assets/images//star-half.png",
-		starOff: "../assets/images/star.svg",
-		starOn: "../assets/images/star-selected.svg",
+		starHalf: "static/assets/images//star-half.png",
+		starOff: "static/assets/images/star.svg",
+		starOn: "static/assets/images/star-selected.svg",
 		target: undefined,
 		targetFormat: "{score}",
 		targetKeep: false,

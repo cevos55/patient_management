@@ -8,6 +8,131 @@ from app.secretary import secretary
 
 
 
+
+#components
+
+def render_sidebar(): return render_template('secretary/component/sidebar.html')
+
+
+#######################################################
+#
+# Nouvelle route 
+#
+#######################################################
+
+
+@secretary.route('/patients/list', methods=['GET'])
+def patients_list(): return render_template('secretary/patients/list.html',render_sidebar=render_sidebar)
+
+
+@secretary.route('/patients/add', methods=['GET'])
+def patients_add(): return render_template('secretary/patients/add.html',render_sidebar=render_sidebar)
+
+
+@secretary.route('/patients/services/consultation', methods=['GET'])
+def patients_services_consultation(): return render_template('secretary/patients/services/consultation.html',render_sidebar=render_sidebar)
+
+
+@secretary.route('/patients/services/hospitalisation', methods=['GET'])
+def patients_services_hospitalisation(): return render_template('secretary/patients/services/hospitalisation.html',render_sidebar=render_sidebar)
+
+
+
+
+
+
+# bill routes
+
+@secretary.route('/bill', methods=['GET'])
+def patients_bill(): return render_template('secretary/bill/bill.html',render_sidebar=render_sidebar)
+
+@secretary.route('/bill/add', methods=['GET'])
+def patients_bill_add(): return render_template('secretary/bill/add.html',render_sidebar=render_sidebar)
+
+
+
+
+
+# appointment routes
+
+@secretary.route('/appointment/list', methods=['GET'])
+def patients_appointment_list(): return render_template('secretary/appointment/list.html',render_sidebar=render_sidebar)
+ 
+@secretary.route('/appointment/add', methods=['GET'])
+def patients_appointment_add(): return render_template('secretary/appointment/add.html',render_sidebar=render_sidebar)
+
+
+
+
+
+# bedroom routes
+
+@secretary.route('/bedroom/list', methods=['GET'])
+def patients_bedroom_list(): return render_template('secretary/bedroom/list.html',render_sidebar=render_sidebar)
+ 
+@secretary.route('/bedroom/add', methods=['GET'])
+def patients_bedroom_add(): return render_template('secretary/bedroom/add.html',render_sidebar=render_sidebar)
+
+
+
+
+
+# messages routes
+
+@secretary.route('/messages', methods=['GET'])
+def patients_messages(): return render_template('secretary/messages/message.html',render_sidebar=render_sidebar) 
+
+
+
+
+
+# account routes
+
+@secretary.route('/account/profile', methods=['GET'])
+def patients_account_profile(): return render_template('secretary/account/profile.html',render_sidebar=render_sidebar) 
+
+@secretary.route('/account/setting', methods=['GET'])
+def patients_account_setting(): return render_template('secretary/account/setting.html',render_sidebar=render_sidebar) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#######################################################
+#
+# anciene route defini par l'ancien version du projet
+#
+#######################################################
+
+
+
 @secretary.route('/dashboard')
 def secretary_dashboard():
     cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
@@ -44,14 +169,16 @@ def secretary_dashboard():
                            patient_count=patient_count,
                            appointment_count=appointment_count,
                            unread_messages_count=unread_messages_count,
-                           admissions=admissions)
+                           admissions=admissions,render_sidebar=render_sidebar)
 
-    return render_template('secretary/dashboard.html')
+    return render_template('secretary/dashboard.html',render_sidebar=render_sidebar)
 
 # @secretary.route('/appointments')  # Cette route doit correspondre à ce que vous appelez dans redirect
 # def secretary_appointments():
 #     # Logique pour afficher les rendez-vous
-#     return render_template('secretary/appointments.html')
+#     return render_template('secretary/appointments.html',render_sidebar=render_sidebar)
+
+
 
 
 
@@ -97,22 +224,7 @@ def cancel_appointment(appointment_id):
     flash('Rendez-vous annulé avec succès.', 'success')
     return redirect(url_for('secretary.liste_appointments'))
 
-
-@secretary.route('/patients', methods=['GET'])
-def list_patients():
-    cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-    cur.execute("""
-        SELECT 
-            patients.id, 
-            patients.full_name, 
-            patients.dob, 
-            admissions.id AS admission_id 
-        FROM patients
-        LEFT JOIN admissions ON patients.id = admissions.patient_id
-    """)
-    patients = cur.fetchall()
-    cur.close()
-    return render_template('secretary/list_patients.html', patients=patients)
+ 
 
 @secretary.route('/liste-rendez-vous', methods=['GET'], endpoint='liste_appointments')
 def liste_appointments():
@@ -140,6 +252,7 @@ def liste_appointments():
 
     # Rendu du template avec les données récupérées
     return render_template('secretary/secretaireListeRdv.html', appointments=appointments)
+
 
 
 
@@ -212,11 +325,11 @@ def planification_appointments():
 
 @secretary.route('/planification', methods=['GET'], endpoint='plan_appointment')
 def plan_appointment():
-    return render_template('secretary/secretairPlanificationRdv.html')
+    return render_template('secretary/secretairPlanificationRdv.html',render_sidebar=render_sidebar)
 
 @secretary.route('/acceuil', methods=['GET'], endpoint='acceuil')
 def acceuil():
-    return render_template('secretary/dashboard.html')
+    return render_template('secretary/dashboard.html',render_sidebar=render_sidebar)
 
 
 @secretary.route('/messages')
