@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Mettre à jour le statut du rendez-vous{% endblock %}
+{% block content %}
+<div class="container mt-4">
+    <h1>Mettre à jour le statut du rendez-vous</h1>
+    <form method="POST" action="{{ url_for('doctor.update_appointment_status', appointment_id=appointment.id) }}">
+        <div class="form-group">
+            <label for="status">Statut du rendez-vous</label>
+            <select class="form-control" id="status" name="status">
+                <option value="Scheduled" {% if appointment.status == 'Scheduled' %}selected{% endif %}>Planifié</option>
+                <option value="Completed" {% if appointment.status == 'Completed' %}selected{% endif %}>Complété</option>
+                <option value="Canceled" {% if appointment.status == 'Canceled' %}selected{% endif %}>Annulé</option>
+                <option value="No Show" {% if appointment.status == 'No Show' %}selected{% endif %}>Absence</option>
+                <option value="Rescheduled" {% if appointment.status == 'Rescheduled' %}selected{% endif %}>Reprogrammé</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Mettre à jour</button>
+    </form>
+</div>
+{% endblock %}

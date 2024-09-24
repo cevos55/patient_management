@@ -1,0 +1,147 @@
+.profile-widget {
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.doctor-img {
+  cursor: pointer;
+  height: 80px;
+  margin: 0 auto 15px;
+  position: relative;
+  width: 80px;
+}
+.doctor-img .avatar {
+  font-size: 24px;
+  height: 80px;
+  line-height: 80px;
+  margin: 0;
+  width: 80px;
+}
+.avatar {
+  background-color: #aaa;
+  border-radius: 50%;
+  color: #fff;
+  display: inline-block;
+  font-weight: 500;
+  height: 38px;
+  line-height: 38px;
+  margin: 0 10px 0 0;
+  overflow: hidden;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  vertical-align: middle;
+  width: 38px;
+  position: relative;
+  white-space: nowrap;
+}
+.dropdown,
+.dropleft,
+.dropright,
+.dropup {
+  position: relative;
+}
+.dropdown.profile-action {
+  position: absolute;
+  right: 5px;
+  text-align: right;
+  top: 10px;
+}
+.action-icon {
+  color: #777;
+  font-size: 18px;
+  padding: 0 10px;
+  display: inline-block;
+}
+.doctor-name {
+  margin: 0;
+}
+.doctor-name a {
+  color: #333;
+}
+.doc-prof {
+  color: #777;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+}
+h4,
+.h4 {
+  font-size: 1.125rem;
+}
+.text-ellipsis {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+input,
+button,
+a {
+  transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
+}
+.avatar > img {
+  width: 100%;
+  display: block;
+}
+
+img {
+  vertical-align: middle;
+  border-style: none;
+}
+.status-red,
+a.status-red {
+  background-color: #ffe5e6;
+  border: 1px solid #fe0000;
+  color: #fe0000;
+}
+.custom-badge {
+  border-radius: 4px;
+  display: inline-block;
+  font-size: 12px;
+  min-width: 95px;
+  padding: 1px 10px;
+  text-align: center;
+}
+.status-green,
+a.status-green {
+  background-color: #e5faf3;
+  border: 1px solid #00ce7c;
+  color: #00ce7c;
+}
+
+tr,
+th {
+  padding: 10px 8px;
+  vertical-align: middle;
+}
