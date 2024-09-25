@@ -22,8 +22,7 @@ instance/
 *.db
 
 # Fichiers sensibles
-*.env
-config.py
+*.env 
 
 # Répertoires temporaires
 tmp/
