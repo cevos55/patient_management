@@ -1,0 +1,93 @@
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<meta name="description" content="Best Bootstrap Admin Dashboards" />
+	<meta name="author" content="Bootstrap Gallery" />
+	<link rel="canonical" href="https://www.bootstrap.gallery/" />
+	<meta property="og:url" content="https://www.bootstrap.gallery" />
+	<meta property="og:title" content="Admin Templates - Dashboard Templates | Bootstrap Gallery" />
+	<meta property="og:description" content="Marketplace for Bootstrap Admin Dashboards" />
+	<meta property="og:type" content="Website" />
+	<meta property="og:site_name" content="Bootstrap Gallery" />
+
+	<!-- Common Css Files -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/animate.css') }}" />
+	<link rel="stylesheet" href="{{ url_for('static', filename='assets/fonts/bootstrap/bootstrap-icons.css') }}" />
+	<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.min.css') }}" />
+	<link rel="shortcut icon" href="{{ url_for('static', filename='assets/images/yuk.svg') }}" />
+
+	<style>
+		input:-webkit-autofill,
+		input:-webkit-autofill:hover,
+		input:-webkit-autofill:focus,
+		textarea:-webkit-autofill,
+		textarea:-webkit-autofill:hover,
+		textarea:-webkit-autofill:focus,
+		select:-webkit-autofill,
+		select:-webkit-autofill:hover,
+		select:-webkit-autofill:focus {
+			box-shadow: 0 0 0px 100px rgb(255 255 255 / 80%) inset;
+		}
+
+		body.login-container {
+			flex-wrap: wrap;
+			justify-content: space-between;
+			background: white;
+			padding: 0 20px;
+		}
+
+		.svg img {
+			width: 792;
+			height: 537;
+		}
+	</style>
+
+	<title>Yuk-Med</title>
+</head>
+
+<body class="login-container">
+	<div class="svg">
+		<img src="{{ url_for('static', filename='assets/images/tof.svg') }}" alt="Vico Admin" />
+	</div>
+
+	{% block content %}
+	<!-- Login box start -->
+	<form method="POST" action="{{ url_for('auth.login') }}">
+		<div class="login-box" style="box-shadow: none">
+			<div class="login-form">
+				<a href="index.html" class="login-logo">
+					<img src="{{ url_for('static', filename='assets/images/yuk.svg') }}" alt="Vico Admin" />
+				</a>
+				<div class="login-welcome" style="margin-bottom: 10">
+					<span style="font-weight: 800; font-size: 27px">Welcome</span>
+				</div>
+				<div class="login-welcome">
+					<span>Please enter your login information</span>
+				</div>
+				<div class="mb-3">
+					<label class="form-label">User Name</label>
+					<input type="text" id="username" name="username" class="form-control" required />
+				</div>
+				<div class="mb-3">
+					<div class="d-flex justify-content-between">
+						<label class="form-label">Password</label>
+					</div>
+					<input type="password" id="password" name="password" class="form-control" required />
+				</div>
+				<div class="login-form-actions">
+					<button type="submit" class="btn">
+						<span class="icon"><i class="bi bi-arrow-right-circle"></i></span> Connexion
+					</button>
+				</div>
+				<div class="mb-3">
+					<div class="d-flex justify-content-between">{# <a href="{{ url_for('auth.forgot_password') }}" class="btn-link ml-auto">Mot de passe oublié ?</a>#}</div>
+				</div>
+			</div>
+		</div>
+	</form>
+	{% endblock %}
+
+	<!-- Main Js Required -->
+	<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>

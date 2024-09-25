@@ -1,0 +1,21 @@
+body {
+	background: #ffffff;
+}
+
+.sidebar-wrapper {
+	background: #2c4671;
+}
+.sidebar-wrapper .sidebar-menu ul li a i {
+	background-color: #f7f7f700;
+	color: white;
+}
+.sidebar-wrapper .sidebar-menu ul li a {
+	color: white;
+	margin-bottom: 27px;
+}
+.sidebar-wrapper .sidebar-menu {
+	margin-top: 55px;
+}
+.sidebar-wrapper .sidebar-menu .sidebar-dropdown .sidebar-submenu ul {
+	margin-top: -30px;
+}
