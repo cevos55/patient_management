@@ -1,0 +1,27 @@
+# Environnement virtuel
+
+venv/ env/ .venv/ ENV/ env.bak/ venv.bak/
+
+# Fichiers de configuration de l'IDE
+
+.idea/ \*.iml
+
+# Cache Python
+
+**pycache**/ \*.py[cod]
+
+# Fichiers générés par les tests
+
+_.log _.pot \*.pyc
+
+# Fichiers de données
+
+instance/ _.sqlite _.db
+
+# Fichiers sensibles
+
+\*.env config.py
+
+# Répertoires temporaires
+
+tmp/ temp/

@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+		<!-- Meta -->
+		<meta name="description" content="Best Bootstrap Admin Dashboards" />
+		<meta name="author" content="Bootstrap Gallery" />
+		<link rel="canonical" href="https://www.bootstrap.gallery/" />
+		<meta property="og:url" content="https://www.bootstrap.gallery" />
+		<meta property="og:title" content="Admin Templates - Dashboard Templates | Bootstrap Gallery" />
+		<meta property="og:description" content="Marketplace for Bootstrap Admin Dashboards" />
+		<meta property="og:type" content="Website" />
+		<meta property="og:site_name" content="Bootstrap Gallery" />
+		<link rel="shortcut icon" href="{{ url_for('static', filename='assets/images/yuk.svg') }}" />
+
+		<!-- Title -->
+		<title>yuk-up</title>
+
+		<!-- *************
+			************ Common Css Files *************
+		************ -->
+
+		<!-- Animated css -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/animate.css') }}" />
+
+		<!-- Bootstrap font icons css -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='assets/fonts/bootstrap/bootstrap-icons.css') }}" />
+
+		<!-- Main css -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.min.css') }}" />
+
+		<!-- *************
+			************ Vendor Css Files *************
+		************ -->
+
+		<!-- Scrollbar CSS -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='assets/vendor/overlay-scroll/OverlayScrollbars.min.css') }}" />
+
+		<!-- Data Tables -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='assets/vendor/datatables/dataTables.bs5.css') }}" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='assets/vendor/datatables/dataTables.bs5-custom.css') }}" />
+
+		<style>
+			td {
+				vertical-align: middle;
+
+				padding: 1rem 0.5rem !important;
+			}
+			body {
+				background-color: white;
+			}
+			#card {
+				box-shadow: none;
+			}
+			table.dataTable > thead .sorting,
+			table.dataTable > thead .sorting_asc {
+				width: 72px !important;
+			}
+
+			table.dataTable > thead #thStart {
+				width: 204.938px !important;
+			}
+			table.dataTable > thead #thEnd {
+				width: 25px !important;
+			}
+			table.dataTable td .actions {
+				justify-content: center;
+			}
+			.logs .log-list {
+				justify-content: flex-start !important;
+			}
+			.logs .log-list .log-title {
+				font-size: 0.85rem !important;
+				text-wrap: nowrap;
+			}
+			.logs .log-list {
+				justify-content: left !important;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!-- Loading wrapper start -->
+		<div id="loading-wrapper">
+			<div class="spinner">
+				<div class="line1"></div>
+				<div class="line2"></div>
+				<div class="line3"></div>
+				<div class="line4"></div>
+				<div class="line5"></div>
+				<div class="line6"></div>
+			</div>
+		</div>
+		<!-- Loading wrapper end -->
+
+		<!-- Page wrapper start -->
+		<div class="page-wrapper">
+			<!-- Sidebar wrapper start -->
+			{{ render_sidebar()|safe }}
+
+			<!-- Sidebar wrapper end -->
+
+			<!-- *************
+				************ Main container start *************
+			************* -->
+			<div class="main-container">
+				<!-- Page header starts -->
+				<div class="page-header">
+					<div class="toggle-sidebar" id="toggle-sidebar">
+						<i class="bi bi-list"></i>
+					</div>
+
+					<!-- Breadcrumb start -->
+					<ol class="breadcrumb d-md-flex d-none">
+						<li class="breadcrumb-item">
+							<i class="bi bi-people"></i>
+							<a href="secrectaireListRdv.html">Appointment</a>
+						</li>
+						<!-- <li class="breadcrumb-item">UI Elements</li> -->
+						<li class="breadcrumb-item breadcrumb-active" aria-current="page">List</li>
+					</ol>
+					<!-- Breadcrumb end -->
+
+					<!-- Header actions ccontainer start -->
+					<div class="header-actions-container">
+						<!-- Search container start -->
+						<div class="search-container">
+							<!-- Search input group start -->
+							<div class="input-group">
+								<input type="text" class="form-control" placeholder="Search anything" />
+								<button class="btn" type="button">
+									<i class="bi bi-search"></i>
+								</button>
+							</div>
+							<!-- Search input group end -->
+						</div>
+						<!-- Search container end -->
+
+						<!-- Leads start -->
+						<a href="orders.html" class="leads d-none d-xl-flex">
+							<div class="lead-details">You have <span class="count"> 21 </span> Notifications</div>
+							<span class="lead-icon"
+								><i class="bi bi-bell-fill animate__animated animate__swing animate__infinite infinite"></i
+								><b class="dot animate__animated animate__heartBeat animate__infinite"></b
+							></span>
+						</a>
+						<!-- Leads end -->
+
+						<!-- Header actions start -->
+						<ul class="header-actions">
+							<li class="dropdown d-none d-md-block">
+								<a href="#" id="countries" data-toggle="dropdown" aria-haspopup="true">
+									<img src="{{ url_for('static', filename='assets/images/flags/1x1/br.svg') }}" class="flag-img" alt="Admin Panels" />
+								</a>
+								<div class="dropdown-menu dropdown-menu-end mini" aria-labelledby="countries">
+									<div class="country-container">
+										<a href="index.html">
+											<img src="{{ url_for('static', filename='assets/images/flags/1x1/us.svg') }}" alt="Clean Admin Dashboards" />
+										</a>
+										<a href="index.html">
+											<img src="{{ url_for('static', filename='assets/images/flags/1x1/in.svg') }}" alt="Google Dashboards" />
+										</a>
+										<a href="index.html">
+											<img src="{{ url_for('static', filename='assets/images/flags/1x1/gb.svg') }}" alt="AI Admin Dashboards" />
+										</a>
+										<a href="index.html">
+											<img src="{{ url_for('static', filename='assets/images/flags/1x1/tr.svg') }}" alt="Modern Dashboards" />
+										</a>
+										<a href="index.html">
+											<img src="{{ url_for('static', filename='assets/images/flags/1x1/ca.svg') }}" alt="Best Admin Dashboards" />
+										</a>
+									</div>
+								</div>
+							</li>
+							<li class="dropdown">
+								<a href="#" id="userSettings" class="user-settings" data-toggle="dropdown" aria-haspopup="true">
+									<span class="user-name d-none d-md-block">Abigale Heaney</span>
+									<span class="avatar">
+										<img src="{{ url_for('static', filename='assets/images/user.png') }}" alt="Admin Templates" />
+										<span class="status online"></span>
+									</span>
+								</a>
+								<div class="dropdown-menu dropdown-menu-end" aria-labelledby="userSettings">
+									<div class="header-profile-actions">
+										<a href="profile.html">Profile</a>
+										<a href="account-settings.html">Settings</a>
+										<a href="login.html">Logout</a>
+									</div>
+								</div>
+							</li>
+						</ul>
+						<!-- Header actions end -->
+					</div>
+					<!-- Header actions ccontainer end -->
+				</div>
+				<!-- Page header ends -->
+
+				<!-- Content wrapper scroll start -->
+				<div class="content-wrapper-scroll">
+					<!-- Content wrapper start -->
+					<div class="content-wrapper">
+						<!-- Row start -->
+						<div class="row">
+							<div class="col-sm-12 col-12">
+								<div class="table-responsive">
+									<table id="basicExample" class="table custom-table">
+										<thead>
+											<tr>
+												<th>Patient</th>
+												<th>Statut</th>
+												<th>Date</th>
+												<th>Time</th>
+												<th>Number</th>
+												<th>Priority</th>
+												<th>Services</th>
+												<th>Doctor</th>
+												<th>Actions</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>
+													<div class="media-box">
+														<img
+															src="{{ url_for('static', filename='assets/images/3d-illustration-person-with-glasses_23-2149436185-removebg-preview.png') }}"
+															class="media-avatar"
+															alt="Bootstrap Themes" />
+														<div class="media-box-body">
+															<div class="text-truncate">Dolly Winters</div>
+															<p>ID: #Arise00763</p>
+														</div>
+													</div>
+												</td>
+												<td>
+													<span class="badge shade-green min-70">Confirm</span>
+												</td>
+												<td>2022/01/25</td>
+
+												<td>
+													<span class="text-blue"><i class="bi bi-clock-fill"></i> 16h20</span>
+												</td>
+
+												<td>
+													<span class="text-green"><i class="bi bi-arrow-up-right text-green"> </i>+ 2</span>
+												</td>
+
+												<td>
+													<div class="logs">
+														<div class="log-list">
+															<div class="log-dot"></div>
+															<div class="log-title">Bonne</div>
+														</div>
+													</div>
+												</td>
+												<td>consultation</td>
+
+												<td>Dr Dominick</td>
+												<td>
+													<div class="actions" data-bs-toggle="dropdown" aria-expanded="false">
+														<a href="#">
+															<i class="bi bi-list text-green"></i>
+														</a>
+													</div>
+													<ul class="dropdown-menu">
+														<li>
+															<a class="dropdown-item" href="#">Modifier</a>
+														</li>
+														<li>
+															<hr class="dropdown-divider" />
+														</li>
+														<li>
+															<a class="dropdown-item" href="#">Archiver</a>
+														</li>
+														<li>
+															<hr class="dropdown-divider" />
+														</li>
+														<li>
+															<a class="dropdown-item" href="#">Actions</a>
+														</li>
+													</ul>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div class="media-box">
+														<img
+															src="{{ url_for('static', filename='assets/images/3d-illustration-person-with-glasses_23-2149436185-removebg-preview.png') }}"
+															class="media-avatar"
+															alt="Bootstrap Themes" />
+														<div class="media-box-body">
+															<div class="text-truncate">Dolly Winters</div>
+															<p>ID: #Arise00763</p>
+														</div>
+													</div>
+												</td>
+												<td>
+													<span class="badge shade-green min-70">Confirm</span>
+												</td>
+												<td>2022/01/25</td>
+
+												<td>
+													<span class="text-blue"><i class="bi bi-clock-fill"></i> 16h20</span>
+												</td>
+
+												<td>
+													<span class="text-green"><i class="bi bi-arrow-up-right text-green"> </i>+ 2</span>
+												</td>
+
+												<td>
+													<div class="logs">
+														<div class="log-list">
+															<div class="log-dot"></div>
+															<div class="log-title">Bonne</div>
+														</div>
+													</div>
+												</td>
+												<td>consultation</td>
+
+												<td>Dr Dominick</td>
+												<td>
+													<div class="actions" data-bs-toggle="dropdown" aria-expanded="false">
+														<a href="#">
+															<i class="bi bi-list text-green"></i>
+														</a>
+													</div>
+													<ul class="dropdown-menu">
+														<li>
+															<a class="dropdown-item" href="#">Modifier</a>
+														</li>
+														<li>
+															<hr class="dropdown-divider" />
+														</li>
+														<li>
+															<a class="dropdown-item" href="#">Archiver</a>
+														</li>
+														<li>
+															<hr class="dropdown-divider" />
+														</li>
+														<li>
+															<a class="dropdown-item" href="#">Actions</a>
+														</li>
+													</ul>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div class="media-box">
+														<img
+															src="{{ url_for('static', filename='assets/images/3d-illustration-person-with-glasses_23-2149436185-removebg-preview.png') }}"
+															class="media-avatar"
+															alt="Bootstrap Themes" />
+														<div class="media-box-body">
+															<div class="text-truncate">Dolly Winters</div>
+															<p>ID: #Arise00763</p>
+														</div>
+													</div>
+												</td>
+												<td>
+													<span class="badge shade-red min-70">Report</span>
+												</td>
+												<td>2022/01/25</td>
+
+												<td>
+													<span class="text-blue"><i class="bi bi-clock-fill"></i> 16h20</span>
+												</td>
+
+												<td>
+													<span class="text-green"><i class="bi bi-arrow-up-right text-green"> </i>+ 2</span>
+												</td>
+
+												<td>
+													<div class="logs">
+														<div class="log-list">
+															<div class="log-dot"></div>
+															<div class="log-title">Bonne</div>
+														</div>
+													</div>
+												</td>
+												<td>consultation</td>
+
+												<td>Dr Dominick</td>
+												<td>
+													<div class="actions" data-bs-toggle="dropdown" aria-expanded="false">
+														<a href="#">
+															<i class="bi bi-list text-green"></i>
+														</a>
+													</div>
+													<ul class="dropdown-menu">
+														<li>
+															<a class="dropdown-item" href="#">Modifier</a>
+														</li>
+														<li>
+															<hr class="dropdown-divider" />
+														</li>
+														<li>
+															<a class="dropdown-item" href="#">Archiver</a>
+														</li>
+														<li>
+															<hr class="dropdown-divider" />
+														</li>
+														<li>
+															<a class="dropdown-item" href="#">Actions</a>
+														</li>
+													</ul>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div class="media-box">
+														<img
+															src="{{ url_for('static', filename='assets/images/3d-illustration-person-with-glasses_23-2149436185-removebg-preview.png') }}"
+															class="media-avatar"
+															alt="Bootstrap Themes" />
+														<div class="media-box-body">
+															<div class="text-truncate">Dolly Winters</div>
+															<p>ID: #Arise00763</p>
+														</div>
+													</div>
+												</td>
+												<td>
+													<span class="badge shade-yellow min-70">Pending</span>
+												</td>
+												<td>2022/01/25</td>
+
+												<td>
+													<span class="text-blue"><i class="bi bi-clock-fill"></i> 16h20</span>
+												</td>
+
+												<td>
+													<span class="text-green"><i class="bi bi-arrow-up-right text-green"> </i>+ 2</span>
+												</td>
+
+												<td>
+													<div class="logs">
+														<div class="log-list">
+															<div class="log-dot"></div>
+															<div class="log-title">Bonne</div>
+														</div>
+													</div>
+												</td>
+												<td>consultation</td>
+
+												<td>Dr Dominick</td>
+												<td>
+													<div class="actions" data-bs-toggle="dropdown" aria-expanded="false">
+														<a href="#">
+															<i class="bi bi-list text-green"></i>
+														</a>
+													</div>
+													<ul class="dropdown-menu">
+														<li>
+															<a class="dropdown-item" href="#">Modifier</a>
+														</li>
+														<li>
+															<hr class="dropdown-divider" />
+														</li>
+														<li>
+															<a class="dropdown-item" href="#">Archiver</a>
+														</li>
+														<li>
+															<hr class="dropdown-divider" />
+														</li>
+														<li>
+															<a class="dropdown-item" href="#">Actions</a>
+														</li>
+													</ul>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div class="media-box">
+														<img
+															src="{{ url_for('static', filename='assets/images/3d-illustration-person-with-glasses_23-2149436185-removebg-preview.png') }}"
+															class="media-avatar"
+															alt="Bootstrap Themes" />
+														<div class="media-box-body">
+															<div class="text-truncate">Dolly Winters</div>
+															<p>ID: #Arise00763</p>
+														</div>
+													</div>
+												</td>
+												<td>
+													<span class="badge shade-red min-70">Report</span>
+												</td>
+												<td>2022/01/25</td>
+
+												<td>
+													<span class="text-blue"><i class="bi bi-clock-fill"></i> 16h20</span>
+												</td>
+
+												<td>
+													<span class="text-green"><i class="bi bi-arrow-up-right text-green"> </i>+ 2</span>
+												</td>
+
+												<td>
+													<div class="logs">
+														<div class="log-list">
+															<div class="log-dot"></div>
+															<div class="log-title">Bonne</div>
+														</div>
+													</div>
+												</td>
+												<td>consultation</td>
+
+												<td>Dr Dominick</td>
+												<td>
+													<div class="actions" data-bs-toggle="dropdown" aria-expanded="false">
+														<a href="#">
+															<i class="bi bi-list text-green"></i>
+														</a>
+													</div>
+													<ul class="dropdown-menu">
+														<li>
+															<a class="dropdown-item" href="#">Modifier</a>
+														</li>
+														<li>
+															<hr class="dropdown-divider" />
+														</li>
+														<li>
+															<a class="dropdown-item" href="#">Archiver</a>
+														</li>
+														<li>
+															<hr class="dropdown-divider" />
+														</li>
+														<li>
+															<a class="dropdown-item" href="#">Actions</a>
+														</li>
+													</ul>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div class="media-box">
+														<img
+															src="{{ url_for('static', filename='assets/images/3d-illustration-person-with-glasses_23-2149436185-removebg-preview.png') }}"
+															class="media-avatar"
+															alt="Bootstrap Themes" />
+														<div class="media-box-body">
+															<div class="text-truncate">Dolly Winters</div>
+															<p>ID: #Arise00763</p>
+														</div>
+													</div>
+												</td>
+												<td>
+													<span class="badge shade-red min-70">report</span>
+												</td>
+												<td>2022/01/25</td>
+
+												<td>
+													<span class="text-blue"><i class="bi bi-clock-fill"></i> 16h20</span>
+												</td>
+
+												<td>
+													<span class="text-green"><i class="bi bi-arrow-up-right text-green"> </i>+ 2</span>
+												</td>
+
+												<td>
+													<div class="logs">
+														<div class="log-list">
+															<div class="log-dot"></div>
+															<div class="log-title">Bonne</div>
+														</div>
+													</div>
+												</td>
+												<td>consultation</td>
+
+												<td>Dr Dominick</td>
+												<td>
+													<div class="actions" data-bs-toggle="dropdown" aria-expanded="false">
+														<a href="#">
+															<i class="bi bi-list text-green"></i>
+														</a>
+													</div>
+													<ul class="dropdown-menu">
+														<li>
+															<a class="dropdown-item" href="#">Modifier</a>
+														</li>
+														<li>
+															<hr class="dropdown-divider" />
+														</li>
+														<li>
+															<a class="dropdown-item" href="#">Archiver</a>
+														</li>
+														<li>
+															<hr class="dropdown-divider" />
+														</li>
+														<li>
+															<a class="dropdown-item" href="#">Actions</a>
+														</li>
+													</ul>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div class="media-box">
+														<img
+															src="{{ url_for('static', filename='assets/images/3d-illustration-person-with-glasses_23-2149436185-removebg-preview.png') }}"
+															class="media-avatar"
+															alt="Bootstrap Themes" />
+														<div class="media-box-body">
+															<div class="text-truncate">Dolly Winters</div>
+															<p>ID: #Arise00763</p>
+														</div>
+													</div>
+												</td>
+												<td>
+													<span class="badge shade-red min-70">report</span>
+												</td>
+												<td>2022/01/25</td>
+
+												<td>
+													<span class="text-blue"><i class="bi bi-clock-fill"></i> 16h20</span>
+												</td>
+
+												<td>
+													<span class="text-green"><i class="bi bi-arrow-up-right text-green"> </i>+ 2</span>
+												</td>
+
+												<td>
+													<div class="logs">
+														<div class="log-list">
+															<div class="log-dot"></div>
+															<div class="log-title">Bonne</div>
+														</div>
+													</div>
+												</td>
+												<td>consultation</td>
+
+												<td>Dr Dominick</td>
+												<td>
+													<div class="actions" data-bs-toggle="dropdown" aria-expanded="false">
+														<a href="#">
+															<i class="bi bi-list text-green"></i>
+														</a>
+													</div>
+													<ul class="dropdown-menu">
+														<li>
+															<a class="dropdown-item" href="#">Modifier</a>
+														</li>
+														<li>
+															<hr class="dropdown-divider" />
+														</li>
+														<li>
+															<a class="dropdown-item" href="#">Archiver</a>
+														</li>
+														<li>
+															<hr class="dropdown-divider" />
+														</li>
+														<li>
+															<a class="dropdown-item" href="#">Actions</a>
+														</li>
+													</ul>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div class="media-box">
+														<img
+															src="{{ url_for('static', filename='assets/images/3d-illustration-person-with-glasses_23-2149436185-removebg-preview.png') }}"
+															class="media-avatar"
+															alt="Bootstrap Themes" />
+														<div class="media-box-body">
+															<div class="text-truncate">Dolly Winters</div>
+															<p>ID: #Arise00763</p>
+														</div>
+													</div>
+												</td>
+												<td>
+													<span class="badge shade-green min-70">confirm</span>
+												</td>
+												<td>2022/01/25</td>
+
+												<td>
+													<span class="text-blue"><i class="bi bi-clock-fill"></i> 16h20</span>
+												</td>
+
+												<td>
+													<span class="text-green"><i class="bi bi-arrow-up-right text-green"> </i>+ 2</span>
+												</td>
+
+												<td>
+													<div class="logs">
+														<div class="log-list">
+															<div class="log-dot"></div>
+															<div class="log-title">Bonne</div>
+														</div>
+													</div>
+												</td>
+												<td>consultation</td>
+
+												<td>Dr Dominick</td>
+												<td>
+													<div class="actions" data-bs-toggle="dropdown" aria-expanded="false">
+														<a href="#">
+															<i class="bi bi-list text-green"></i>
+														</a>
+													</div>
+													<ul class="dropdown-menu">
+														<li>
+															<a class="dropdown-item" href="#">Modifier</a>
+														</li>
+														<li>
+															<hr class="dropdown-divider" />
+														</li>
+														<li>
+															<a class="dropdown-item" href="#">Archiver</a>
+														</li>
+														<li>
+															<hr class="dropdown-divider" />
+														</li>
+														<li>
+															<a class="dropdown-item" href="#">Actions</a>
+														</li>
+													</ul>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div class="media-box">
+														<img
+															src="{{ url_for('static', filename='assets/images/3d-illustration-person-with-glasses_23-2149436185-removebg-preview.png') }}"
+															class="media-avatar"
+															alt="Bootstrap Themes" />
+														<div class="media-box-body">
+															<div class="text-truncate">Dolly Winters</div>
+															<p>ID: #Arise00763</p>
+														</div>
+													</div>
+												</td>
+												<td>
+													<span class="badge shade-green min-70">confirm</span>
+												</td>
+												<td>2022/01/25</td>
+
+												<td>
+													<span class="text-blue"><i class="bi bi-clock-fill"></i> 16h20</span>
+												</td>
+
+												<td>
+													<span class="text-green"><i class="bi bi-arrow-up-right text-green"> </i>+ 2</span>
+												</td>
+
+												<td>
+													<div class="logs">
+														<div class="log-list">
+															<div class="log-dot"></div>
+															<div class="log-title">Bonne</div>
+														</div>
+													</div>
+												</td>
+												<td>consultation</td>
+
+												<td>Dr Dominick</td>
+												<td>
+													<div class="actions" data-bs-toggle="dropdown" aria-expanded="false">
+														<a href="#">
+															<i class="bi bi-list text-green"></i>
+														</a>
+													</div>
+													<ul class="dropdown-menu">
+														<li>
+															<a class="dropdown-item" href="#">Modifier</a>
+														</li>
+														<li>
+															<hr class="dropdown-divider" />
+														</li>
+														<li>
+															<a class="dropdown-item" href="#">Archiver</a>
+														</li>
+														<li>
+															<hr class="dropdown-divider" />
+														</li>
+														<li>
+															<a class="dropdown-item" href="#">Actions</a>
+														</li>
+													</ul>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div class="media-box">
+														<img
+															src="{{ url_for('static', filename='assets/images/3d-illustration-person-with-glasses_23-2149436185-removebg-preview.png') }}"
+															class="media-avatar"
+															alt="Bootstrap Themes" />
+														<div class="media-box-body">
+															<div class="text-truncate">Dolly Winters</div>
+															<p>ID: #Arise00763</p>
+														</div>
+													</div>
+												</td>
+												<td>
+													<span class="badge shade-yellow min-70">pending</span>
+												</td>
+												<td>2022/01/25</td>
+
+												<td>
+													<span class="text-blue"><i class="bi bi-clock-fill"></i> 16h20</span>
+												</td>
+
+												<td>
+													<span class="text-green"><i class="bi bi-arrow-up-right text-green"> </i>+ 2</span>
+												</td>
+
+												<td>
+													<div class="logs">
+														<div class="log-list">
+															<div class="log-dot"></div>
+															<div class="log-title">Bonne</div>
+														</div>
+													</div>
+												</td>
+												<td>consultation</td>
+
+												<td>Dr Dominick</td>
+												<td>
+													<div class="actions" data-bs-toggle="dropdown" aria-expanded="false">
+														<a href="#">
+															<i class="bi bi-list text-green"></i>
+														</a>
+													</div>
+													<ul class="dropdown-menu">
+														<li>
+															<a class="dropdown-item" href="#">Modifier</a>
+														</li>
+														<li>
+															<hr class="dropdown-divider" />
+														</li>
+														<li>
+															<a class="dropdown-item" href="#">Archiver</a>
+														</li>
+														<li>
+															<hr class="dropdown-divider" />
+														</li>
+														<li>
+															<a class="dropdown-item" href="#">Actions</a>
+														</li>
+													</ul>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<!-- Row end -->
+					</div>
+					<div class="modal modal-dark fade" id="viewRow" tabindex="-1" aria-labelledby="viewRowLabel" style="display: none" aria-hidden="true">
+						<div class="modal-dialog modal-lg modal-dialog-centered">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="viewRowLabel">View Details</h5>
+									<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+								</div>
+								<div class="modal-body">
+									<!-- Row start -->
+									<div class="row">
+										<div class="col-lg-4 col-sm-6 col-6">
+											<div class="customer-card">
+												<h6>Customer Name</h6>
+												<h5>Garrett Winters</h5>
+											</div>
+										</div>
+										<div class="col-lg-4 col-sm-6 col-6">
+											<div class="customer-card">
+												<h6>Customer ID</h6>
+												<h5>#Arise00763</h5>
+											</div>
+										</div>
+										<div class="col-lg-4 col-sm-6 col-6">
+											<div class="customer-card">
+												<h6>Contact</h6>
+												<h5>2022/01/25</h5>
+											</div>
+										</div>
+										<div class="col-lg-4 col-sm-6 col-6">
+											<div class="customer-card">
+												<h6>Amount Spent</h6>
+												<h5>$2570.00</h5>
+											</div>
+										</div>
+										<div class="col-lg-4 col-sm-6 col-6">
+											<div class="customer-card">
+												<h6>Last Login</h6>
+												<h5>21/11/2021</h5>
+											</div>
+										</div>
+										<div class="col-lg-4 col-sm-6 col-6">
+											<div class="customer-card">
+												<h6>Coupons Used</h6>
+												<h5>7</h5>
+											</div>
+										</div>
+										<div class="col-lg-4 col-sm-6 col-6">
+											<div class="customer-card">
+												<h6>Total Orders</h6>
+												<h5>95</h5>
+											</div>
+										</div>
+										<div class="col-lg-4 col-sm-6 col-6">
+											<div class="customer-card">
+												<h6>Cancelled Orders</h6>
+												<h5>2</h5>
+											</div>
+										</div>
+										<div class="col-lg-4 col-sm-6 col-6">
+											<div class="customer-card">
+												<h6>Reviews</h6>
+												<h5>21</h5>
+											</div>
+										</div>
+									</div>
+									<!-- Row end -->
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-success" data-bs-dismiss="modal">Close</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Content wrapper end -->
+
+					<!-- App Footer start -->
+					<div class="app-footer">
+						<span>© Arise admin 2023</span>
+					</div>
+					<!-- App footer end -->
+				</div>
+				<!-- Content wrapper scroll end -->
+			</div>
+			<!-- *************
+				************ Main container end *************
+			************* -->
+		</div>
+		<!-- Page wrapper end -->
+
+		<!-- *************
+			************ Required JavaScript Files *************
+		************* -->
+		<!-- Required jQuery first, then Bootstrap Bundle JS -->
+		<script src="{{ url_for('static', filename='assets/js/jquery.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/js/bootstrap.bundle.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/js/modernizr.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/js/moment.js') }}"></script>
+
+		<!-- *************
+			************ Vendor Js Files *************
+		************* -->
+
+		<!-- Overlay Scroll JS -->
+		<script src="{{ url_for('static', filename='assets/vendor/overlay-scroll/jquery.overlayScrollbars.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/vendor/overlay-scroll/custom-scrollbar.js') }}"></script>
+
+		<!-- *************
+			************ Vendor Js Files *************
+		************* -->
+
+		<!-- Data Tables -->
+		<script src="{{ url_for('static', filename='assets/vendor/datatables/dataTables.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/vendor/datatables/dataTables.bootstrap.min.js') }}"></script>
+
+		<!-- Custom Data tables -->
+		<script src="{{ url_for('static', filename='assets/vendor/datatables/custom/custom-datatables.js') }}"></script>
+		<!-- Main Js Required -->
+		<script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+	</body>
+</html>

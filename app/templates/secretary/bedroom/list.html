@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+		<!-- Meta -->
+		<meta name="description" content="Best Bootstrap Admin Dashboards" />
+		<meta name="author" content="Bootstrap Gallery" />
+		<link rel="canonical" href="https://www.bootstrap.gallery/" />
+		<meta property="og:url" content="https://www.bootstrap.gallery" />
+		<meta property="og:title" content="Admin Templates - Dashboard Templates | Bootstrap Gallery" />
+		<meta property="og:description" content="Marketplace for Bootstrap Admin Dashboards" />
+		<meta property="og:type" content="Website" />
+		<meta property="og:site_name" content="Bootstrap Gallery" />
+		<link rel="shortcut icon" href="{{ url_for('static', filename='assets/images/yuk.svg') }}" />
+
+		<!-- Title -->
+		<title>yuk-up</title>
+
+		<!-- *************
+			************ Common Css Files *************
+		************ -->
+
+		<!-- Animated css -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/animate.css') }}" />
+
+		<!-- Bootstrap font icons css -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='assets/fonts/bootstrap/bootstrap-icons.css') }}" />
+
+		<!-- Main css -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.min.css') }}" />
+
+		<!-- *************
+			************ Vendor Css Files *************
+		************ -->
+
+		<!-- Scrollbar CSS -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='assets/vendor/overlay-scroll/OverlayScrollbars.min.css') }}" />
+
+		<style>
+			.carousel-control-next-icon,
+			.carousel-control-prev-icon {
+				background-color: black;
+			}
+
+			.carousel-control-prev,
+			.carousel-control-next {
+				width: 3%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!-- Loading wrapper start -->
+		<div id="loading-wrapper">
+			<div class="spinner">
+				<div class="line1"></div>
+				<div class="line2"></div>
+				<div class="line3"></div>
+				<div class="line4"></div>
+				<div class="line5"></div>
+				<div class="line6"></div>
+			</div>
+		</div>
+		<!-- Loading wrapper end -->
+
+		<!-- Page wrapper start -->
+		<div class="page-wrapper">
+			<!-- Sidebar wrapper start -->
+			{{ render_sidebar()|safe }}
+
+			<!-- Sidebar wrapper end -->
+
+			<!-- *************
+				************ Main container start *************
+			************* -->
+
+			<div class="main-container">
+				<!-- Page header starts -->
+				<div class="page-header">
+					<div class="toggle-sidebar" id="toggle-sidebar">
+						<i class="bi bi-list"></i>
+					</div>
+
+					<!-- Breadcrumb start -->
+					<ol class="breadcrumb d-md-flex d-none">
+						<li class="breadcrumb-item">
+							<i class="bi bi-door-open"></i>
+							<a href="secretaireChambreList.html">Bedroom</a>
+						</li>
+						<li class="breadcrumb-item breadcrumb-active" aria-current="page">List</li>
+					</ol>
+					<!-- Breadcrumb end -->
+
+					<!-- Header actions ccontainer start -->
+					<div class="header-actions-container">
+						<!-- Search container start -->
+						<div class="search-container">
+							<!-- Search input group start -->
+							<div class="input-group">
+								<input type="text" class="form-control" placeholder="Search anything" />
+								<button class="btn" type="button">
+									<i class="bi bi-search"></i>
+								</button>
+							</div>
+							<!-- Search input group end -->
+						</div>
+						<!-- Search container end -->
+
+						<!-- Leads start -->
+						<a href="orders.html" class="leads d-none d-xl-flex">
+							<div class="lead-details">You have <span class="count"> 21 </span> Notifications</div>
+							<span class="lead-icon"
+								><i class="bi bi-bell-fill animate__animated animate__swing animate__infinite infinite"></i
+								><b class="dot animate__animated animate__heartBeat animate__infinite"></b
+							></span>
+						</a>
+						<!-- Leads end -->
+
+						<!-- Header actions start -->
+						<ul class="header-actions">
+							<li class="dropdown d-none d-md-block">
+								<a href="#" id="countries" data-toggle="dropdown" aria-haspopup="true">
+									<img src="{{ url_for('static', filename='assets/images/flags/1x1/br.svg') }}" class="flag-img" alt="Admin Panels" />
+								</a>
+								<div class="dropdown-menu dropdown-menu-end mini" aria-labelledby="countries">
+									<div class="country-container">
+										<a href="index.html">
+											<img src="{{ url_for('static', filename='assets/images/flags/1x1/us.svg') }}" alt="Clean Admin Dashboards" />
+										</a>
+										<a href="index.html">
+											<img src="{{ url_for('static', filename='assets/images/flags/1x1/in.svg') }}" alt="Google Dashboards" />
+										</a>
+										<a href="index.html">
+											<img src="{{ url_for('static', filename='assets/images/flags/1x1/gb.svg') }}" alt="AI Admin Dashboards" />
+										</a>
+										<a href="index.html">
+											<img src="{{ url_for('static', filename='assets/images/flags/1x1/tr.svg') }}" alt="Modern Dashboards" />
+										</a>
+										<a href="index.html">
+											<img src="{{ url_for('static', filename='assets/images/flags/1x1/ca.svg') }}" alt="Best Admin Dashboards" />
+										</a>
+									</div>
+								</div>
+							</li>
+							<li class="dropdown">
+								<a href="#" id="userSettings" class="user-settings" data-toggle="dropdown" aria-haspopup="true">
+									<span class="user-name d-none d-md-block">Abigale Heaney</span>
+									<span class="avatar">
+										<img src="{{ url_for('static', filename='assets/images/user.png') }}" alt="Admin Templates" />
+										<span class="status online"></span>
+									</span>
+								</a>
+								<div class="dropdown-menu dropdown-menu-end" aria-labelledby="userSettings">
+									<div class="header-profile-actions">
+										<a href="profile.html">Profile</a>
+										<a href="account-settings.html">Settings</a>
+										<a href="login.html">Logout</a>
+									</div>
+								</div>
+							</li>
+						</ul>
+						<!-- Header actions end -->
+					</div>
+					<!-- Header actions ccontainer end -->
+				</div>
+				<!-- Page header ends -->
+
+				<!-- Content wrapper scroll start -->
+				<div class="content-wrapper-scroll">
+					<!-- Content wrapper start -->
+					<div class="content-wrapper">
+						<!-- Row start -->
+						<div class="row">
+							<div class="col-xl-12 col-sm-6 col-12">
+								<div class="card">
+									<div class="card-body">
+										<div id="carouselExampleInterval" class="carousel slide">
+											<div class="carousel-inner">
+												<div class="carousel-item active" data-bs-interval="10000">
+													<div class="row">
+														<div class="col-xxl-3 col-md-4 col-sm-6 col-12">
+															<div class="product-card">
+																<img class="product-card-img-top" src="{{ url_for('static', filename='assets/images/hospital-bed.jpg') }}" alt="Bootstrap Gallery" />
+																<div class="product-card-body">
+																	<div style="display: flex; align-items: center; justify-content: space-between">
+																		<h5 class="product-title">Chambre A127</h5>
+																		<div class="tex-green" style="font-size: 0.7rem; color: green; font-weight: 600; margin-bottom: 0.7rem">Disponilbe</div>
+																	</div>
+																	<div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.7rem">
+																		<div style="width: auto; display: flex">
+																			<div class="tex-green" style="font-size: 0.9rem; color: #000000; font-weight: 400">Nombre de Lit</div>
+																			<div class="tex-green" style="font-size: 0.9rem; color: green; font-weight: 600; margin-left: 0.7rem">5</div>
+																		</div>
+																		<div style="width: auto; display: flex">
+																			<div class="tex-green" style="font-size: 0.9rem; color: rgb(0, 0, 0); font-weight: 400">Disponible</div>
+																			<div class="tex-green" style="font-size: 0.9rem; color: green; font-weight: 600; margin-left: 0.7rem">2</div>
+																		</div>
+																	</div>
+																	<div class="product-price">
+																		<span class="disount-price">10.000f</span>
+																		<span class="actucal-price">15.000f</span>
+																		<span class="off-price">30% Off</span>
+																	</div>
+																	<div class="product-rating">
+																		<div class="rate1 rating-stars"></div>
+																		<div class="total-ratings">2750</div>
+																	</div>
+
+																	<div class="product-actions">
+																		<button class="btn btn-info addToCart">Modifier</button>
+																	</div>
+																</div>
+															</div>
+														</div>
+
+														<div class="col-xxl-3 col-md-4 col-sm-6 col-12">
+															<div class="product-card">
+																<img class="product-card-img-top" src="{{ url_for('static', filename='assets/images/hospital-bed.jpg') }}" alt="Bootstrap Gallery" />
+																<div class="product-card-body">
+																	<div style="display: flex; align-items: center; justify-content: space-between">
+																		<h5 class="product-title">Chambre A127</h5>
+																		<div class="tex-green" style="font-size: 0.7rem; color: green; font-weight: 600; margin-bottom: 0.7rem">Disponilbe</div>
+																	</div>
+																	<div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.7rem">
+																		<div style="width: auto; display: flex">
+																			<div class="tex-green" style="font-size: 0.9rem; color: #000000; font-weight: 400">Nombre de Lit</div>
+																			<div class="tex-green" style="font-size: 0.9rem; color: green; font-weight: 600; margin-left: 0.7rem">5</div>
+																		</div>
+																		<div style="width: auto; display: flex">
+																			<div class="tex-green" style="font-size: 0.9rem; color: rgb(0, 0, 0); font-weight: 400">Disponible</div>
+																			<div class="tex-green" style="font-size: 0.9rem; color: green; font-weight: 600; margin-left: 0.7rem">2</div>
+																		</div>
+																	</div>
+																	<div class="product-price">
+																		<span class="disount-price">10.000f</span>
+																		<span class="actucal-price">15.000f</span>
+																		<span class="off-price">30% Off</span>
+																	</div>
+																	<div class="product-rating">
+																		<div class="rate1 rating-stars"></div>
+																		<div class="total-ratings">2750</div>
+																	</div>
+
+																	<div class="product-actions">
+																		<button class="btn btn-info addToCart">Modifier</button>
+																	</div>
+																</div>
+															</div>
+														</div>
+
+														<div class="col-xxl-3 col-md-4 col-sm-6 col-12">
+															<div class="product-card">
+																<img class="product-card-img-top" src="{{ url_for('static', filename='assets/images/hospital-bed.jpg') }}" alt="Bootstrap Gallery" />
+																<div class="product-card-body">
+																	<div style="display: flex; align-items: center; justify-content: space-between">
+																		<h5 class="product-title">Chambre A127</h5>
+																		<div class="tex-green" style="font-size: 0.7rem; color: green; font-weight: 600; margin-bottom: 0.7rem">Disponilbe</div>
+																	</div>
+																	<div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.7rem">
+																		<div style="width: auto; display: flex">
+																			<div class="tex-green" style="font-size: 0.9rem; color: #000000; font-weight: 400">Nombre de Lit</div>
+																			<div class="tex-green" style="font-size: 0.9rem; color: green; font-weight: 600; margin-left: 0.7rem">5</div>
+																		</div>
+																		<div style="width: auto; display: flex">
+																			<div class="tex-green" style="font-size: 0.9rem; color: rgb(0, 0, 0); font-weight: 400">Disponible</div>
+																			<div class="tex-green" style="font-size: 0.9rem; color: green; font-weight: 600; margin-left: 0.7rem">2</div>
+																		</div>
+																	</div>
+																	<div class="product-price">
+																		<span class="disount-price">10.000f</span>
+																		<span class="actucal-price">15.000f</span>
+																		<span class="off-price">30% Off</span>
+																	</div>
+																	<div class="product-rating">
+																		<div class="rate1 rating-stars"></div>
+																		<div class="total-ratings">2750</div>
+																	</div>
+
+																	<div class="product-actions">
+																		<button class="btn btn-info addToCart">Modifier</button>
+																	</div>
+																</div>
+															</div>
+														</div>
+
+														<div class="col-xxl-3 col-md-4 col-sm-6 col-12">
+															<div class="product-card">
+																<img class="product-card-img-top" src="{{ url_for('static', filename='assets/images/hospital-bed.jpg') }}" alt="Bootstrap Gallery" />
+																<div class="product-card-body">
+																	<div style="display: flex; align-items: center; justify-content: space-between">
+																		<h5 class="product-title">Chambre A127</h5>
+																		<div class="tex-green" style="font-size: 0.7rem; color: green; font-weight: 600; margin-bottom: 0.7rem">Disponilbe</div>
+																	</div>
+																	<div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.7rem">
+																		<div style="width: auto; display: flex">
+																			<div class="tex-green" style="font-size: 0.9rem; color: #000000; font-weight: 400">Nombre de Lit</div>
+																			<div class="tex-green" style="font-size: 0.9rem; color: green; font-weight: 600; margin-left: 0.7rem">5</div>
+																		</div>
+																		<div style="width: auto; display: flex">
+																			<div class="tex-green" style="font-size: 0.9rem; color: rgb(0, 0, 0); font-weight: 400">Disponible</div>
+																			<div class="tex-green" style="font-size: 0.9rem; color: green; font-weight: 600; margin-left: 0.7rem">2</div>
+																		</div>
+																	</div>
+																	<div class="product-price">
+																		<span class="disount-price">10.000f</span>
+																		<span class="actucal-price">15.000f</span>
+																		<span class="off-price">30% Off</span>
+																	</div>
+																	<div class="product-rating">
+																		<div class="rate1 rating-stars"></div>
+																		<div class="total-ratings">2750</div>
+																	</div>
+
+																	<div class="product-actions">
+																		<button class="btn btn-info addToCart">Modifier</button>
+																	</div>
+																</div>
+															</div>
+														</div>
+
+														<div class="col-xxl-3 col-md-4 col-sm-6 col-12">
+															<div class="product-card">
+																<img class="product-card-img-top" src="{{ url_for('static', filename='assets/images/hospital-bed.jpg') }}" alt="Bootstrap Gallery" />
+																<div class="product-card-body">
+																	<div style="display: flex; align-items: center; justify-content: space-between">
+																		<h5 class="product-title">Chambre A127</h5>
+																		<div class="tex-green" style="font-size: 0.7rem; color: green; font-weight: 600; margin-bottom: 0.7rem">Disponilbe</div>
+																	</div>
+																	<div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.7rem">
+																		<div style="width: auto; display: flex">
+																			<div class="tex-green" style="font-size: 0.9rem; color: #000000; font-weight: 400">Nombre de Lit</div>
+																			<div class="tex-green" style="font-size: 0.9rem; color: green; font-weight: 600; margin-left: 0.7rem">5</div>
+																		</div>
+																		<div style="width: auto; display: flex">
+																			<div class="tex-green" style="font-size: 0.9rem; color: rgb(0, 0, 0); font-weight: 400">Disponible</div>
+																			<div class="tex-green" style="font-size: 0.9rem; color: green; font-weight: 600; margin-left: 0.7rem">2</div>
+																		</div>
+																	</div>
+																	<div class="product-price">
+																		<span class="disount-price">10.000f</span>
+																		<span class="actucal-price">15.000f</span>
+																		<span class="off-price">30% Off</span>
+																	</div>
+																	<div class="product-rating">
+																		<div class="rate1 rating-stars"></div>
+																		<div class="total-ratings">2750</div>
+																	</div>
+
+																	<div class="product-actions">
+																		<button class="btn btn-info addToCart">Modifier</button>
+																	</div>
+																</div>
+															</div>
+														</div>
+
+														<div class="col-xxl-3 col-md-4 col-sm-6 col-12">
+															<div class="product-card">
+																<img class="product-card-img-top" src="{{ url_for('static', filename='assets/images/hospital-bed.jpg') }}" alt="Bootstrap Gallery" />
+																<div class="product-card-body">
+																	<div style="display: flex; align-items: center; justify-content: space-between">
+																		<h5 class="product-title">Chambre A127</h5>
+																		<div class="tex-green" style="font-size: 0.7rem; color: green; font-weight: 600; margin-bottom: 0.7rem">Disponilbe</div>
+																	</div>
+																	<div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.7rem">
+																		<div style="width: auto; display: flex">
+																			<div class="tex-green" style="font-size: 0.9rem; color: #000000; font-weight: 400">Nombre de Lit</div>
+																			<div class="tex-green" style="font-size: 0.9rem; color: green; font-weight: 600; margin-left: 0.7rem">5</div>
+																		</div>
+																		<div style="width: auto; display: flex">
+																			<div class="tex-green" style="font-size: 0.9rem; color: rgb(0, 0, 0); font-weight: 400">Disponible</div>
+																			<div class="tex-green" style="font-size: 0.9rem; color: green; font-weight: 600; margin-left: 0.7rem">2</div>
+																		</div>
+																	</div>
+																	<div class="product-price">
+																		<span class="disount-price">10.000f</span>
+																		<span class="actucal-price">15.000f</span>
+																		<span class="off-price">30% Off</span>
+																	</div>
+																	<div class="product-rating">
+																		<div class="rate1 rating-stars"></div>
+																		<div class="total-ratings">2750</div>
+																	</div>
+
+																	<div class="product-actions">
+																		<button class="btn btn-info addToCart">Modifier</button>
+																	</div>
+																</div>
+															</div>
+														</div>
+
+														<div class="col-xxl-3 col-md-4 col-sm-6 col-12">
+															<div class="product-card">
+																<img class="product-card-img-top" src="{{ url_for('static', filename='assets/images/hospital-bed.jpg') }}" alt="Bootstrap Gallery" />
+																<div class="product-card-body">
+																	<div style="display: flex; align-items: center; justify-content: space-between">
+																		<h5 class="product-title">Chambre A127</h5>
+																		<div class="tex-green" style="font-size: 0.7rem; color: green; font-weight: 600; margin-bottom: 0.7rem">Disponilbe</div>
+																	</div>
+																	<div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.7rem">
+																		<div style="width: auto; display: flex">
+																			<div class="tex-green" style="font-size: 0.9rem; color: #000000; font-weight: 400">Nombre de Lit</div>
+																			<div class="tex-green" style="font-size: 0.9rem; color: green; font-weight: 600; margin-left: 0.7rem">5</div>
+																		</div>
+																		<div style="width: auto; display: flex">
+																			<div class="tex-green" style="font-size: 0.9rem; color: rgb(0, 0, 0); font-weight: 400">Disponible</div>
+																			<div class="tex-green" style="font-size: 0.9rem; color: green; font-weight: 600; margin-left: 0.7rem">2</div>
+																		</div>
+																	</div>
+																	<div class="product-price">
+																		<span class="disount-price">10.000f</span>
+																		<span class="actucal-price">15.000f</span>
+																		<span class="off-price">30% Off</span>
+																	</div>
+																	<div class="product-rating">
+																		<div class="rate1 rating-stars"></div>
+																		<div class="total-ratings">2750</div>
+																	</div>
+
+																	<div class="product-actions">
+																		<button class="btn btn-info addToCart">Modifier</button>
+																	</div>
+																</div>
+															</div>
+														</div>
+
+														<div class="col-xxl-3 col-md-4 col-sm-6 col-12">
+															<div class="product-card">
+																<img class="product-card-img-top" src="{{ url_for('static', filename='assets/images/hospital-bed.jpg') }}" alt="Bootstrap Gallery" />
+																<div class="product-card-body">
+																	<div style="display: flex; align-items: center; justify-content: space-between">
+																		<h5 class="product-title">Chambre A127</h5>
+																		<div class="tex-green" style="font-size: 0.7rem; color: green; font-weight: 600; margin-bottom: 0.7rem">Disponilbe</div>
+																	</div>
+																	<div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.7rem">
+																		<div style="width: auto; display: flex">
+																			<div class="tex-green" style="font-size: 0.9rem; color: #000000; font-weight: 400">Nombre de Lit</div>
+																			<div class="tex-green" style="font-size: 0.9rem; color: green; font-weight: 600; margin-left: 0.7rem">5</div>
+																		</div>
+																		<div style="width: auto; display: flex">
+																			<div class="tex-green" style="font-size: 0.9rem; color: rgb(0, 0, 0); font-weight: 400">Disponible</div>
+																			<div class="tex-green" style="font-size: 0.9rem; color: green; font-weight: 600; margin-left: 0.7rem">2</div>
+																		</div>
+																	</div>
+																	<div class="product-price">
+																		<span class="disount-price">10.000f</span>
+																		<span class="actucal-price">15.000f</span>
+																		<span class="off-price">30% Off</span>
+																	</div>
+																	<div class="product-rating">
+																		<div class="rate1 rating-stars"></div>
+																		<div class="total-ratings">2750</div>
+																	</div>
+
+																	<div class="product-actions">
+																		<button class="btn btn-info addToCart">Modifier</button>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="carousel-item" data-bs-interval="5000">
+													<div class="row">
+														<div class="col-xxl-3 col-md-4 col-sm-6 col-12">
+															<div class="product-card">
+																<img class="product-card-img-top" src="{{ url_for('static', filename='assets/images/hospital-bed.jpg') }}" alt="Bootstrap Gallery" />
+																<div class="product-card-body">
+																	<div style="display: flex; align-items: center; justify-content: space-between">
+																		<h5 class="product-title">Chambre A127</h5>
+																		<div class="tex-green" style="font-size: 0.7rem; color: green; font-weight: 600; margin-bottom: 0.7rem">Disponilbe</div>
+																	</div>
+																	<div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.7rem">
+																		<div style="width: auto; display: flex">
+																			<div class="tex-green" style="font-size: 0.9rem; color: #000000; font-weight: 400">Nombre de Lit</div>
+																			<div class="tex-green" style="font-size: 0.9rem; color: green; font-weight: 600; margin-left: 0.7rem">5</div>
+																		</div>
+																		<div style="width: auto; display: flex">
+																			<div class="tex-green" style="font-size: 0.9rem; color: rgb(0, 0, 0); font-weight: 400">Disponible</div>
+																			<div class="tex-green" style="font-size: 0.9rem; color: green; font-weight: 600; margin-left: 0.7rem">2</div>
+																		</div>
+																	</div>
+																	<div class="product-price">
+																		<span class="disount-price">10.000f</span>
+																		<span class="actucal-price">15.000f</span>
+																		<span class="off-price">30% Off</span>
+																	</div>
+																	<div class="product-rating">
+																		<div class="rate1 rating-stars"></div>
+																		<div class="total-ratings">2750</div>
+																	</div>
+
+																	<div class="product-actions">
+																		<button class="btn btn-info addToCart">Modifier</button>
+																	</div>
+																</div>
+															</div>
+														</div>
+
+														<div class="col-xxl-3 col-md-4 col-sm-6 col-12">
+															<div class="product-card">
+																<img class="product-card-img-top" src="{{ url_for('static', filename='assets/images/hospital-bed.jpg') }}" alt="Bootstrap Gallery" />
+																<div class="product-card-body">
+																	<div style="display: flex; align-items: center; justify-content: space-between">
+																		<h5 class="product-title">Chambre A127</h5>
+																		<div class="tex-green" style="font-size: 0.7rem; color: green; font-weight: 600; margin-bottom: 0.7rem">Disponilbe</div>
+																	</div>
+																	<div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.7rem">
+																		<div style="width: auto; display: flex">
+																			<div class="tex-green" style="font-size: 0.9rem; color: #000000; font-weight: 400">Nombre de Lit</div>
+																			<div class="tex-green" style="font-size: 0.9rem; color: green; font-weight: 600; margin-left: 0.7rem">5</div>
+																		</div>
+																		<div style="width: auto; display: flex">
+																			<div class="tex-green" style="font-size: 0.9rem; color: rgb(0, 0, 0); font-weight: 400">Disponible</div>
+																			<div class="tex-green" style="font-size: 0.9rem; color: green; font-weight: 600; margin-left: 0.7rem">2</div>
+																		</div>
+																	</div>
+																	<div class="product-price">
+																		<span class="disount-price">10.000f</span>
+																		<span class="actucal-price">15.000f</span>
+																		<span class="off-price">30% Off</span>
+																	</div>
+																	<div class="product-rating">
+																		<div class="rate1 rating-stars"></div>
+																		<div class="total-ratings">2750</div>
+																	</div>
+
+																	<div class="product-actions">
+																		<button class="btn btn-info addToCart">Modifier</button>
+																	</div>
+																</div>
+															</div>
+														</div>
+
+														<div class="col-xxl-3 col-md-4 col-sm-6 col-12">
+															<div class="product-card">
+																<img class="product-card-img-top" src="{{ url_for('static', filename='assets/images/hospital-bed.jpg') }}" alt="Bootstrap Gallery" />
+																<div class="product-card-body">
+																	<div style="display: flex; align-items: center; justify-content: space-between">
+																		<h5 class="product-title">Chambre A127</h5>
+																		<div class="tex-green" style="font-size: 0.7rem; color: green; font-weight: 600; margin-bottom: 0.7rem">Disponilbe</div>
+																	</div>
+																	<div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.7rem">
+																		<div style="width: auto; display: flex">
+																			<div class="tex-green" style="font-size: 0.9rem; color: #000000; font-weight: 400">Nombre de Lit</div>
+																			<div class="tex-green" style="font-size: 0.9rem; color: green; font-weight: 600; margin-left: 0.7rem">5</div>
+																		</div>
+																		<div style="width: auto; display: flex">
+																			<div class="tex-green" style="font-size: 0.9rem; color: rgb(0, 0, 0); font-weight: 400">Disponible</div>
+																			<div class="tex-green" style="font-size: 0.9rem; color: green; font-weight: 600; margin-left: 0.7rem">2</div>
+																		</div>
+																	</div>
+																	<div class="product-price">
+																		<span class="disount-price">10.000f</span>
+																		<span class="actucal-price">15.000f</span>
+																		<span class="off-price">30% Off</span>
+																	</div>
+																	<div class="product-rating">
+																		<div class="rate1 rating-stars"></div>
+																		<div class="total-ratings">2750</div>
+																	</div>
+
+																	<div class="product-actions">
+																		<button class="btn btn-info addToCart">Modifier</button>
+																	</div>
+																</div>
+															</div>
+														</div>
+
+														<div class="col-xxl-3 col-md-4 col-sm-6 col-12">
+															<div class="product-card">
+																<img class="product-card-img-top" src="{{ url_for('static', filename='assets/images/hospital-bed.jpg') }}" alt="Bootstrap Gallery" />
+																<div class="product-card-body">
+																	<div style="display: flex; align-items: center; justify-content: space-between">
+																		<h5 class="product-title">Chambre A127</h5>
+																		<div class="tex-green" style="font-size: 0.7rem; color: green; font-weight: 600; margin-bottom: 0.7rem">Disponilbe</div>
+																	</div>
+																	<div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.7rem">
+																		<div style="width: auto; display: flex">
+																			<div class="tex-green" style="font-size: 0.9rem; color: #000000; font-weight: 400">Nombre de Lit</div>
+																			<div class="tex-green" style="font-size: 0.9rem; color: green; font-weight: 600; margin-left: 0.7rem">5</div>
+																		</div>
+																		<div style="width: auto; display: flex">
+																			<div class="tex-green" style="font-size: 0.9rem; color: rgb(0, 0, 0); font-weight: 400">Disponible</div>
+																			<div class="tex-green" style="font-size: 0.9rem; color: green; font-weight: 600; margin-left: 0.7rem">2</div>
+																		</div>
+																	</div>
+																	<div class="product-price">
+																		<span class="disount-price">10.000f</span>
+																		<span class="actucal-price">15.000f</span>
+																		<span class="off-price">30% Off</span>
+																	</div>
+																	<div class="product-rating">
+																		<div class="rate1 rating-stars"></div>
+																		<div class="total-ratings">2750</div>
+																	</div>
+
+																	<div class="product-actions">
+																		<button class="btn btn-info addToCart">Modifier</button>
+																	</div>
+																</div>
+															</div>
+														</div>
+
+														<div class="col-xxl-3 col-md-4 col-sm-6 col-12">
+															<div class="product-card">
+																<img class="product-card-img-top" src="{{ url_for('static', filename='assets/images/hospital-bed.jpg') }}" alt="Bootstrap Gallery" />
+																<div class="product-card-body">
+																	<div style="display: flex; align-items: center; justify-content: space-between">
+																		<h5 class="product-title">Chambre A127</h5>
+																		<div class="tex-green" style="font-size: 0.7rem; color: green; font-weight: 600; margin-bottom: 0.7rem">Disponilbe</div>
+																	</div>
+																	<div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.7rem">
+																		<div style="width: auto; display: flex">
+																			<div class="tex-green" style="font-size: 0.9rem; color: #000000; font-weight: 400">Nombre de Lit</div>
+																			<div class="tex-green" style="font-size: 0.9rem; color: green; font-weight: 600; margin-left: 0.7rem">5</div>
+																		</div>
+																		<div style="width: auto; display: flex">
+																			<div class="tex-green" style="font-size: 0.9rem; color: rgb(0, 0, 0); font-weight: 400">Disponible</div>
+																			<div class="tex-green" style="font-size: 0.9rem; color: green; font-weight: 600; margin-left: 0.7rem">2</div>
+																		</div>
+																	</div>
+																	<div class="product-price">
+																		<span class="disount-price">10.000f</span>
+																		<span class="actucal-price">15.000f</span>
+																		<span class="off-price">30% Off</span>
+																	</div>
+																	<div class="product-rating">
+																		<div class="rate1 rating-stars"></div>
+																		<div class="total-ratings">2750</div>
+																	</div>
+
+																	<div class="product-actions">
+																		<button class="btn btn-info addToCart">Modifier</button>
+																	</div>
+																</div>
+															</div>
+														</div>
+
+														<div class="col-xxl-3 col-md-4 col-sm-6 col-12">
+															<div class="product-card">
+																<img class="product-card-img-top" src="{{ url_for('static', filename='assets/images/hospital-bed.jpg') }}" alt="Bootstrap Gallery" />
+																<div class="product-card-body">
+																	<div style="display: flex; align-items: center; justify-content: space-between">
+																		<h5 class="product-title">Chambre A127</h5>
+																		<div class="tex-green" style="font-size: 0.7rem; color: green; font-weight: 600; margin-bottom: 0.7rem">Disponilbe</div>
+																	</div>
+																	<div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.7rem">
+																		<div style="width: auto; display: flex">
+																			<div class="tex-green" style="font-size: 0.9rem; color: #000000; font-weight: 400">Nombre de Lit</div>
+																			<div class="tex-green" style="font-size: 0.9rem; color: green; font-weight: 600; margin-left: 0.7rem">5</div>
+																		</div>
+																		<div style="width: auto; display: flex">
+																			<div class="tex-green" style="font-size: 0.9rem; color: rgb(0, 0, 0); font-weight: 400">Disponible</div>
+																			<div class="tex-green" style="font-size: 0.9rem; color: green; font-weight: 600; margin-left: 0.7rem">2</div>
+																		</div>
+																	</div>
+																	<div class="product-price">
+																		<span class="disount-price">10.000f</span>
+																		<span class="actucal-price">15.000f</span>
+																		<span class="off-price">30% Off</span>
+																	</div>
+																	<div class="product-rating">
+																		<div class="rate1 rating-stars"></div>
+																		<div class="total-ratings">2750</div>
+																	</div>
+
+																	<div class="product-actions">
+																		<button class="btn btn-info addToCart">Modifier</button>
+																	</div>
+																</div>
+															</div>
+														</div>
+
+														<div class="col-xxl-3 col-md-4 col-sm-6 col-12">
+															<div class="product-card">
+																<img class="product-card-img-top" src="{{ url_for('static', filename='assets/images/hospital-bed.jpg') }}" alt="Bootstrap Gallery" />
+																<div class="product-card-body">
+																	<div style="display: flex; align-items: center; justify-content: space-between">
+																		<h5 class="product-title">Chambre A127</h5>
+																		<div class="tex-green" style="font-size: 0.7rem; color: green; font-weight: 600; margin-bottom: 0.7rem">Disponilbe</div>
+																	</div>
+																	<div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.7rem">
+																		<div style="width: auto; display: flex">
+																			<div class="tex-green" style="font-size: 0.9rem; color: #000000; font-weight: 400">Nombre de Lit</div>
+																			<div class="tex-green" style="font-size: 0.9rem; color: green; font-weight: 600; margin-left: 0.7rem">5</div>
+																		</div>
+																		<div style="width: auto; display: flex">
+																			<div class="tex-green" style="font-size: 0.9rem; color: rgb(0, 0, 0); font-weight: 400">Disponible</div>
+																			<div class="tex-green" style="font-size: 0.9rem; color: green; font-weight: 600; margin-left: 0.7rem">2</div>
+																		</div>
+																	</div>
+																	<div class="product-price">
+																		<span class="disount-price">10.000f</span>
+																		<span class="actucal-price">15.000f</span>
+																		<span class="off-price">30% Off</span>
+																	</div>
+																	<div class="product-rating">
+																		<div class="rate1 rating-stars"></div>
+																		<div class="total-ratings">2750</div>
+																	</div>
+
+																	<div class="product-actions">
+																		<button class="btn btn-info addToCart">Modifier</button>
+																	</div>
+																</div>
+															</div>
+														</div>
+
+														<div class="col-xxl-3 col-md-4 col-sm-6 col-12">
+															<div class="product-card">
+																<img class="product-card-img-top" src="{{ url_for('static', filename='assets/images/hospital-bed.jpg') }}" alt="Bootstrap Gallery" />
+																<div class="product-card-body">
+																	<div style="display: flex; align-items: center; justify-content: space-between">
+																		<h5 class="product-title">Chambre A127</h5>
+																		<div class="tex-green" style="font-size: 0.7rem; color: green; font-weight: 600; margin-bottom: 0.7rem">Disponilbe</div>
+																	</div>
+																	<div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.7rem">
+																		<div style="width: auto; display: flex">
+																			<div class="tex-green" style="font-size: 0.9rem; color: #000000; font-weight: 400">Nombre de Lit</div>
+																			<div class="tex-green" style="font-size: 0.9rem; color: green; font-weight: 600; margin-left: 0.7rem">5</div>
+																		</div>
+																		<div style="width: auto; display: flex">
+																			<div class="tex-green" style="font-size: 0.9rem; color: rgb(0, 0, 0); font-weight: 400">Disponible</div>
+																			<div class="tex-green" style="font-size: 0.9rem; color: green; font-weight: 600; margin-left: 0.7rem">2</div>
+																		</div>
+																	</div>
+																	<div class="product-price">
+																		<span class="disount-price">10.000f</span>
+																		<span class="actucal-price">15.000f</span>
+																		<span class="off-price">30% Off</span>
+																	</div>
+																	<div class="product-rating">
+																		<div class="rate1 rating-stars"></div>
+																		<div class="total-ratings">2750</div>
+																	</div>
+
+																	<div class="product-actions">
+																		<button class="btn btn-info addToCart">Modifier</button>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="carousel-item" data-bs-interval="2500">
+													<div class="row">
+														<div class="col-xxl-3 col-md-4 col-sm-6 col-12">
+															<div class="product-card">
+																<img class="product-card-img-top" src="{{ url_for('static', filename='assets/images/hospital-bed.jpg') }}" alt="Bootstrap Gallery" />
+																<div class="product-card-body">
+																	<div style="display: flex; align-items: center; justify-content: space-between">
+																		<h5 class="product-title">Chambre A127</h5>
+																		<div class="tex-green" style="font-size: 0.7rem; color: green; font-weight: 600; margin-bottom: 0.7rem">Disponilbe</div>
+																	</div>
+																	<div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.7rem">
+																		<div style="width: auto; display: flex">
+																			<div class="tex-green" style="font-size: 0.9rem; color: #000000; font-weight: 400">Nombre de Lit</div>
+																			<div class="tex-green" style="font-size: 0.9rem; color: green; font-weight: 600; margin-left: 0.7rem">5</div>
+																		</div>
+																		<div style="width: auto; display: flex">
+																			<div class="tex-green" style="font-size: 0.9rem; color: rgb(0, 0, 0); font-weight: 400">Disponible</div>
+																			<div class="tex-green" style="font-size: 0.9rem; color: green; font-weight: 600; margin-left: 0.7rem">2</div>
+																		</div>
+																	</div>
+																	<div class="product-price">
+																		<span class="disount-price">10.000f</span>
+																		<span class="actucal-price">15.000f</span>
+																		<span class="off-price">30% Off</span>
+																	</div>
+																	<div class="product-rating">
+																		<div class="rate1 rating-stars"></div>
+																		<div class="total-ratings">2750</div>
+																	</div>
+
+																	<div class="product-actions">
+																		<button class="btn btn-info addToCart">Modifier</button>
+																	</div>
+																</div>
+															</div>
+														</div>
+
+														<div class="col-xxl-3 col-md-4 col-sm-6 col-12">
+															<div class="product-card">
+																<img class="product-card-img-top" src="{{ url_for('static', filename='assets/images/hospital-bed.jpg') }}" alt="Bootstrap Gallery" />
+																<div class="product-card-body">
+																	<div style="display: flex; align-items: center; justify-content: space-between">
+																		<h5 class="product-title">Chambre A127</h5>
+																		<div class="tex-green" style="font-size: 0.7rem; color: green; font-weight: 600; margin-bottom: 0.7rem">Disponilbe</div>
+																	</div>
+																	<div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.7rem">
+																		<div style="width: auto; display: flex">
+																			<div class="tex-green" style="font-size: 0.9rem; color: #000000; font-weight: 400">Nombre de Lit</div>
+																			<div class="tex-green" style="font-size: 0.9rem; color: green; font-weight: 600; margin-left: 0.7rem">5</div>
+																		</div>
+																		<div style="width: auto; display: flex">
+																			<div class="tex-green" style="font-size: 0.9rem; color: rgb(0, 0, 0); font-weight: 400">Disponible</div>
+																			<div class="tex-green" style="font-size: 0.9rem; color: green; font-weight: 600; margin-left: 0.7rem">2</div>
+																		</div>
+																	</div>
+																	<div class="product-price">
+																		<span class="disount-price">10.000f</span>
+																		<span class="actucal-price">15.000f</span>
+																		<span class="off-price">30% Off</span>
+																	</div>
+																	<div class="product-rating">
+																		<div class="rate1 rating-stars"></div>
+																		<div class="total-ratings">2750</div>
+																	</div>
+
+																	<div class="product-actions">
+																		<button class="btn btn-info addToCart">Modifier</button>
+																	</div>
+																</div>
+															</div>
+														</div>
+
+														<div class="col-xxl-3 col-md-4 col-sm-6 col-12">
+															<div class="product-card">
+																<img class="product-card-img-top" src="{{ url_for('static', filename='assets/images/hospital-bed.jpg') }}" alt="Bootstrap Gallery" />
+																<div class="product-card-body">
+																	<div style="display: flex; align-items: center; justify-content: space-between">
+																		<h5 class="product-title">Chambre A127</h5>
+																		<div class="tex-green" style="font-size: 0.7rem; color: green; font-weight: 600; margin-bottom: 0.7rem">Disponilbe</div>
+																	</div>
+																	<div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.7rem">
+																		<div style="width: auto; display: flex">
+																			<div class="tex-green" style="font-size: 0.9rem; color: #000000; font-weight: 400">Nombre de Lit</div>
+																			<div class="tex-green" style="font-size: 0.9rem; color: green; font-weight: 600; margin-left: 0.7rem">5</div>
+																		</div>
+																		<div style="width: auto; display: flex">
+																			<div class="tex-green" style="font-size: 0.9rem; color: rgb(0, 0, 0); font-weight: 400">Disponible</div>
+																			<div class="tex-green" style="font-size: 0.9rem; color: green; font-weight: 600; margin-left: 0.7rem">2</div>
+																		</div>
+																	</div>
+																	<div class="product-price">
+																		<span class="disount-price">10.000f</span>
+																		<span class="actucal-price">15.000f</span>
+																		<span class="off-price">30% Off</span>
+																	</div>
+																	<div class="product-rating">
+																		<div class="rate1 rating-stars"></div>
+																		<div class="total-ratings">2750</div>
+																	</div>
+
+																	<div class="product-actions">
+																		<button class="btn btn-info addToCart">Modifier</button>
+																	</div>
+																</div>
+															</div>
+														</div>
+
+														<div class="col-xxl-3 col-md-4 col-sm-6 col-12">
+															<div class="product-card">
+																<img class="product-card-img-top" src="{{ url_for('static', filename='assets/images/hospital-bed.jpg') }}" alt="Bootstrap Gallery" />
+																<div class="product-card-body">
+																	<div style="display: flex; align-items: center; justify-content: space-between">
+																		<h5 class="product-title">Chambre A127</h5>
+																		<div class="tex-green" style="font-size: 0.7rem; color: green; font-weight: 600; margin-bottom: 0.7rem">Disponilbe</div>
+																	</div>
+																	<div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.7rem">
+																		<div style="width: auto; display: flex">
+																			<div class="tex-green" style="font-size: 0.9rem; color: #000000; font-weight: 400">Nombre de Lit</div>
+																			<div class="tex-green" style="font-size: 0.9rem; color: green; font-weight: 600; margin-left: 0.7rem">5</div>
+																		</div>
+																		<div style="width: auto; display: flex">
+																			<div class="tex-green" style="font-size: 0.9rem; color: rgb(0, 0, 0); font-weight: 400">Disponible</div>
+																			<div class="tex-green" style="font-size: 0.9rem; color: green; font-weight: 600; margin-left: 0.7rem">2</div>
+																		</div>
+																	</div>
+																	<div class="product-price">
+																		<span class="disount-price">10.000f</span>
+																		<span class="actucal-price">15.000f</span>
+																		<span class="off-price">30% Off</span>
+																	</div>
+																	<div class="product-rating">
+																		<div class="rate1 rating-stars"></div>
+																		<div class="total-ratings">2750</div>
+																	</div>
+
+																	<div class="product-actions">
+																		<button class="btn btn-info addToCart">Modifier</button>
+																	</div>
+																</div>
+															</div>
+														</div>
+
+														<div class="col-xxl-3 col-md-4 col-sm-6 col-12">
+															<div class="product-card">
+																<img class="product-card-img-top" src="{{ url_for('static', filename='assets/images/hospital-bed.jpg') }}" alt="Bootstrap Gallery" />
+																<div class="product-card-body">
+																	<div style="display: flex; align-items: center; justify-content: space-between">
+																		<h5 class="product-title">Chambre A127</h5>
+																		<div class="tex-green" style="font-size: 0.7rem; color: green; font-weight: 600; margin-bottom: 0.7rem">Disponilbe</div>
+																	</div>
+																	<div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.7rem">
+																		<div style="width: auto; display: flex">
+																			<div class="tex-green" style="font-size: 0.9rem; color: #000000; font-weight: 400">Nombre de Lit</div>
+																			<div class="tex-green" style="font-size: 0.9rem; color: green; font-weight: 600; margin-left: 0.7rem">5</div>
+																		</div>
+																		<div style="width: auto; display: flex">
+																			<div class="tex-green" style="font-size: 0.9rem; color: rgb(0, 0, 0); font-weight: 400">Disponible</div>
+																			<div class="tex-green" style="font-size: 0.9rem; color: green; font-weight: 600; margin-left: 0.7rem">2</div>
+																		</div>
+																	</div>
+																	<div class="product-price">
+																		<span class="disount-price">10.000f</span>
+																		<span class="actucal-price">15.000f</span>
+																		<span class="off-price">30% Off</span>
+																	</div>
+																	<div class="product-rating">
+																		<div class="rate1 rating-stars"></div>
+																		<div class="total-ratings">2750</div>
+																	</div>
+
+																	<div class="product-actions">
+																		<button class="btn btn-info addToCart">Modifier</button>
+																	</div>
+																</div>
+															</div>
+														</div>
+
+														<div class="col-xxl-3 col-md-4 col-sm-6 col-12">
+															<div class="product-card">
+																<img class="product-card-img-top" src="{{ url_for('static', filename='assets/images/hospital-bed.jpg') }}" alt="Bootstrap Gallery" />
+																<div class="product-card-body">
+																	<div style="display: flex; align-items: center; justify-content: space-between">
+																		<h5 class="product-title">Chambre A127</h5>
+																		<div class="tex-green" style="font-size: 0.7rem; color: green; font-weight: 600; margin-bottom: 0.7rem">Disponilbe</div>
+																	</div>
+																	<div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.7rem">
+																		<div style="width: auto; display: flex">
+																			<div class="tex-green" style="font-size: 0.9rem; color: #000000; font-weight: 400">Nombre de Lit</div>
+																			<div class="tex-green" style="font-size: 0.9rem; color: green; font-weight: 600; margin-left: 0.7rem">5</div>
+																		</div>
+																		<div style="width: auto; display: flex">
+																			<div class="tex-green" style="font-size: 0.9rem; color: rgb(0, 0, 0); font-weight: 400">Disponible</div>
+																			<div class="tex-green" style="font-size: 0.9rem; color: green; font-weight: 600; margin-left: 0.7rem">2</div>
+																		</div>
+																	</div>
+																	<div class="product-price">
+																		<span class="disount-price">10.000f</span>
+																		<span class="actucal-price">15.000f</span>
+																		<span class="off-price">30% Off</span>
+																	</div>
+																	<div class="product-rating">
+																		<div class="rate1 rating-stars"></div>
+																		<div class="total-ratings">2750</div>
+																	</div>
+
+																	<div class="product-actions">
+																		<button class="btn btn-info addToCart">Modifier</button>
+																	</div>
+																</div>
+															</div>
+														</div>
+
+														<div class="col-xxl-3 col-md-4 col-sm-6 col-12">
+															<div class="product-card">
+																<img class="product-card-img-top" src="{{ url_for('static', filename='assets/images/hospital-bed.jpg') }}" alt="Bootstrap Gallery" />
+																<div class="product-card-body">
+																	<div style="display: flex; align-items: center; justify-content: space-between">
+																		<h5 class="product-title">Chambre A127</h5>
+																		<div class="tex-green" style="font-size: 0.7rem; color: green; font-weight: 600; margin-bottom: 0.7rem">Disponilbe</div>
+																	</div>
+																	<div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.7rem">
+																		<div style="width: auto; display: flex">
+																			<div class="tex-green" style="font-size: 0.9rem; color: #000000; font-weight: 400">Nombre de Lit</div>
+																			<div class="tex-green" style="font-size: 0.9rem; color: green; font-weight: 600; margin-left: 0.7rem">5</div>
+																		</div>
+																		<div style="width: auto; display: flex">
+																			<div class="tex-green" style="font-size: 0.9rem; color: rgb(0, 0, 0); font-weight: 400">Disponible</div>
+																			<div class="tex-green" style="font-size: 0.9rem; color: green; font-weight: 600; margin-left: 0.7rem">2</div>
+																		</div>
+																	</div>
+																	<div class="product-price">
+																		<span class="disount-price">10.000f</span>
+																		<span class="actucal-price">15.000f</span>
+																		<span class="off-price">30% Off</span>
+																	</div>
+																	<div class="product-rating">
+																		<div class="rate1 rating-stars"></div>
+																		<div class="total-ratings">2750</div>
+																	</div>
+
+																	<div class="product-actions">
+																		<button class="btn btn-info addToCart">Modifier</button>
+																	</div>
+																</div>
+															</div>
+														</div>
+
+														<div class="col-xxl-3 col-md-4 col-sm-6 col-12">
+															<div class="product-card">
+																<img class="product-card-img-top" src="{{ url_for('static', filename='assets/images/hospital-bed.jpg') }}" alt="Bootstrap Gallery" />
+																<div class="product-card-body">
+																	<div style="display: flex; align-items: center; justify-content: space-between">
+																		<h5 class="product-title">Chambre A127</h5>
+																		<div class="tex-green" style="font-size: 0.7rem; color: green; font-weight: 600; margin-bottom: 0.7rem">Disponilbe</div>
+																	</div>
+																	<div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.7rem">
+																		<div style="width: auto; display: flex">
+																			<div class="tex-green" style="font-size: 0.9rem; color: #000000; font-weight: 400">Nombre de Lit</div>
+																			<div class="tex-green" style="font-size: 0.9rem; color: green; font-weight: 600; margin-left: 0.7rem">5</div>
+																		</div>
+																		<div style="width: auto; display: flex">
+																			<div class="tex-green" style="font-size: 0.9rem; color: rgb(0, 0, 0); font-weight: 400">Disponible</div>
+																			<div class="tex-green" style="font-size: 0.9rem; color: green; font-weight: 600; margin-left: 0.7rem">2</div>
+																		</div>
+																	</div>
+																	<div class="product-price">
+																		<span class="disount-price">10.000f</span>
+																		<span class="actucal-price">15.000f</span>
+																		<span class="off-price">30% Off</span>
+																	</div>
+																	<div class="product-rating">
+																		<div class="rate1 rating-stars"></div>
+																		<div class="total-ratings">2750</div>
+																	</div>
+
+																	<div class="product-actions">
+																		<button class="btn btn-info addToCart">Modifier</button>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+												<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+											</button>
+											<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+												<span class="carousel-control-next-icon" aria-hidden="true"></span>
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Row end -->
+					</div>
+					<!-- Content wrapper end -->
+
+					<!-- App Footer start -->
+					<div class="app-footer">
+						<span>© Arise admin 2023</span>
+					</div>
+					<!-- App footer end -->
+				</div>
+				<!-- Content wrapper scroll end -->
+			</div>
+			<!-- *************
+				************ Main container end *************
+			************* -->
+		</div>
+		<!-- Page wrapper end -->
+
+		<!-- *************
+			************ Required JavaScript Files *************
+		************* -->
+		<!-- Required jQuery first, then Bootstrap Bundle JS -->
+		<script src="{{ url_for('static', filename='assets/js/jquery.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/js/bootstrap.bundle.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/js/modernizr.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/js/moment.js') }}"></script>
+
+		<!-- *************
+			************ Vendor Js Files *************
+		************* -->
+
+		<!-- Overlay Scroll JS -->
+		<script src="{{ url_for('static', filename='assets/vendor/overlay-scroll/jquery.overlayScrollbars.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/vendor/overlay-scroll/custom-scrollbar.js') }}"></script>
+
+		<!-- Apex Charts -->
+		<script src="{{ url_for('static', filename='assets/vendor/apex/apexcharts.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/vendor/apex/custom/sales/salesGraph.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/vendor/apex/custom/sales/revenueGraph.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/vendor/apex/custom/sales/taskGraph.js') }}"></script>
+
+		<!-- Rating JS -->
+		<script src="{{ url_for('static', filename='assets/vendor/rating/raty.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/vendor/rating/raty-custom.js') }}"></script>
+
+		<!-- Main Js Required -->
+		<script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+	</body>
+</html>
