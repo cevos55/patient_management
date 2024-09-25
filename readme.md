@@ -4,6 +4,8 @@ Actions a executer apres avoir cloner le projet depuis git
 
 1- creer un environement avec la commande : python -m venv env
 
+executer l'environenment avec active
+
 2- installer toutesles dependes deja present dans le ficier requirment avec la commande pip install -r requirements.txt
 
 Actions a executer pendant le travail
