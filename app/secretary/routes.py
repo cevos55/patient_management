@@ -46,6 +46,9 @@ def patients_services_hospitalisation(): return render_template('secretary/patie
 @secretary.route('/bill', methods=['GET'])
 def patients_bill(): return render_template('secretary/bill/bill.html',render_sidebar=render_sidebar)
 
+@secretary.route('/bill/list', methods=['GET'])
+def patients_bill_list(): return render_template('secretary/bill/list.html',render_sidebar=render_sidebar)
+
 @secretary.route('/bill/add', methods=['GET'])
 def patients_bill_add(): return render_template('secretary/bill/add.html',render_sidebar=render_sidebar)
 
