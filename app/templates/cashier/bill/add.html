@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+		<!-- Meta -->
+		<meta name="description" content="Best Bootstrap Admin Dashboards" />
+		<meta name="author" content="Bootstrap Gallery" />
+		<link rel="canonical" href="https://www.bootstrap.gallery/" />
+		<meta property="og:url" content="https://www.bootstrap.gallery" />
+		<meta property="og:title" content="Admin Templates - Dashboard Templates | Bootstrap Gallery" />
+		<meta property="og:description" content="Marketplace for Bootstrap Admin Dashboards" />
+		<meta property="og:type" content="Website" />
+		<meta property="og:site_name" content="Bootstrap Gallery" />
+		<link rel="shortcut icon" href="{{ url_for('static', filename='assets/images/yuk.svg') }}" />
+
+		<!-- Title -->
+		<title>yuk-up</title>
+
+		<!-- *************
+			************ Common Css Files *************
+		************ -->
+
+		<!-- Animated css -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/animate.css') }}" />
+
+		<!-- Bootstrap font icons css -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='assets/fonts/bootstrap/bootstrap-icons.css') }}" />
+
+		<!-- Main css -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.min.css') }}" />
+
+		<!-- *************
+			************ Vendor Css Files *************
+		************ -->
+
+		<!-- Scrollbar CSS -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='assets/vendor/overlay-scroll/OverlayScrollbars.min.css') }}" />
+
+		<!-- Date Range CSS -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='assets/vendor/daterange/daterange.css') }}" />
+
+		<!-- Bootstrap Select CSS -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='assets/vendor/bs-select/bs-select.css') }}" />
+		<style>
+			.logs .log-list {
+				justify-content: left !important;
+			}
+
+			.table > thead td,
+			.table > thead th {
+				background-color: #2954a2;
+				color: white;
+			}
+
+			.table > :not(caption) > * > td {
+				background-color: rgba(208, 46, 46, 0) !important;
+				font-weight: 500;
+				width: 10%;
+			}
+			.backLogo {
+				position: absolute;
+				background-color: black;
+				width: 100%;
+				height: 100%;
+			}
+			.card {
+				background: #ffffffcf !important;
+			}
+
+			.statutPaid {
+				font-size: 17px;
+				font-weight: 500;
+				padding: 6px 30px;
+				border-radius: 4px;
+				margin-left: 35px;
+			}
+
+			.statutUnpaidHover {
+				background-color: #a22929;
+				color: white;
+			}
+
+			.statutPaidHover {
+				color: white;
+				background-color: #2954a2;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!-- Loading wrapper start -->
+		<div id="loading-wrapper">
+			<div class="spinner">
+				<div class="line1"></div>
+				<div class="line2"></div>
+				<div class="line3"></div>
+				<div class="line4"></div>
+				<div class="line5"></div>
+				<div class="line6"></div>
+			</div>
+		</div>
+		<!-- Loading wrapper end -->
+
+		<!-- Page wrapper start -->
+		<div class="page-wrapper">
+			<!-- Sidebar wrapper start -->
+			{{ render_sidebar()|safe }}
+
+			<!-- Sidebar wrapper end -->
+
+			<!-- *************
+				************ Main container start *************
+			************* -->
+			<div class="main-container">
+				<!-- Page header starts -->
+				<div class="page-header">
+					<div class="toggle-sidebar" id="toggle-sidebar">
+						<i class="bi bi-list"></i>
+					</div>
+
+					<!-- Breadcrumb start -->
+					<ol class="breadcrumb d-md-flex d-none">
+						<li class="breadcrumb-item">
+							<i class="bi bi-file-text"></i>
+							<a href="billNew.html">Bill</a>
+						</li>
+						<li class="breadcrumb-item">New</li>
+						<!-- <li class="breadcrumb-item breadcrumb-active" aria-current="page">
+							New Bill
+						</li> -->
+					</ol>
+					<!-- Breadcrumb end -->
+
+					<!-- Header actions ccontainer start -->
+					<div class="header-actions-container">
+						<!-- Search container start -->
+						<div class="search-container">
+							<!-- Search input group start -->
+							<div class="input-group">
+								<input type="text" class="form-control" placeholder="Search anything" />
+								<button class="btn" type="button">
+									<i class="bi bi-search"></i>
+								</button>
+							</div>
+							<!-- Search input group end -->
+						</div>
+						<!-- Search container end -->
+
+						<!-- Leads start -->
+						<a href="orders.html" class="leads d-none d-xl-flex">
+							<div class="lead-details">You have <span class="count"> 21 </span> Notifications</div>
+							<span class="lead-icon"
+								><i class="bi bi-bell-fill animate__animated animate__swing animate__infinite infinite"></i
+								><b class="dot animate__animated animate__heartBeat animate__infinite"></b
+							></span>
+						</a>
+						<!-- Leads end -->
+
+						<!-- Header actions start -->
+						<ul class="header-actions">
+							<li class="dropdown d-none d-md-block">
+								<a href="#" id="countries" data-toggle="dropdown" aria-haspopup="true">
+									<img src="{{ url_for('static', filename='assets/images/flags/1x1/br.svg') }}" class="flag-img" alt="Admin Panels" />
+								</a>
+								<div class="dropdown-menu dropdown-menu-end mini" aria-labelledby="countries">
+									<div class="country-container">
+										<a href="index.html">
+											<img src="{{ url_for('static', filename='assets/images/flags/1x1/us.svg') }}" alt="Clean Admin Dashboards" />
+										</a>
+										<a href="index.html">
+											<img src="{{ url_for('static', filename='assets/images/flags/1x1/in.svg') }}" alt="Google Dashboards" />
+										</a>
+										<a href="index.html">
+											<img src="{{ url_for('static', filename='assets/images/flags/1x1/gb.svg') }}" alt="AI Admin Dashboards" />
+										</a>
+										<a href="index.html">
+											<img src="{{ url_for('static', filename='assets/images/flags/1x1/tr.svg') }}" alt="Modern Dashboards" />
+										</a>
+										<a href="index.html">
+											<img src="{{ url_for('static', filename='assets/images/flags/1x1/ca.svg') }}" alt="Best Admin Dashboards" />
+										</a>
+									</div>
+								</div>
+							</li>
+							<li class="dropdown">
+								<a href="#" id="userSettings" class="user-settings" data-toggle="dropdown" aria-haspopup="true">
+									<span class="user-name d-none d-md-block">Abigale Heaney</span>
+									<span class="avatar">
+										<img src="{{ url_for('static', filename='assets/images/user.png') }}" alt="Admin Templates" />
+										<span class="status online"></span>
+									</span>
+								</a>
+								<div class="dropdown-menu dropdown-menu-end" aria-labelledby="userSettings">
+									<div class="header-profile-actions">
+										<a href="profile.html">Profile</a>
+										<a href="account-settings.html">Settings</a>
+										<a href="login.html">Logout</a>
+									</div>
+								</div>
+							</li>
+						</ul>
+						<!-- Header actions end -->
+					</div>
+					<!-- Header actions ccontainer end -->
+				</div>
+				<!-- Page header ends -->
+
+				<!-- Content wrapper scroll start -->
+				<div class="content-wrapper-scroll">
+					<!-- Content wrapper start -->
+					<div class="content-wrapper">
+						<!-- Row start -->
+
+						<div class="row">
+							<div class="col-12">
+								<div class="card" style="margin-bottom: 10px">
+									<div class="card-body">
+										<div class="custom-btn-group" style="position: relative">
+											<button type="button" class="btn btn-primary btn-rounded">
+												<a style="color: white" href="#">Enregistrer</a>
+											</button>
+											<button type="button" class="btn btn-success btn-rounded">Imprimer</button>
+											<button style="position: absolute; right: 0; padding: 11px 12px" type="button" class="btn btn-success btn-rounded">
+												<div class="icon">
+													<i style="margin: 0" class="bi bi-plus-circle"></i>
+												</div>
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-12 col-12" style="position: relative; display: flex; justify-content: center; align-items: center">
+								<!-- Card start -->
+								<img style="position: absolute; width: 300px; z-index: 0; /* top: 50%; */" src="{{ url_for('static', filename='assets/images/yuk.svg') }}" alt="Admin Dashboards" />
+								<div class="card">
+									<div style="z-index: 1" class="card-header">
+										<div class="row" style="width: 100%">
+											<div class="col-12">
+												<div class="row">
+													<div class="col-xxl-3 col-xl-3 col-lg-4 col-md-4 col-sm-4 col-12">
+														<div class="logo">
+															<img style="width: 30px" src="{{ url_for('static', filename='assets/images/yuk.svg') }}" alt="Admin Dashboards" />
+														</div>
+													</div>
+													<div class="col-xxl-3 col-xl-3 col-lg-4 col-md-4 col-sm-4 col-12">
+														<div style="text-align: end">
+															<label for="inputCompanyName" class="form-label">contact@gmail.com</label>
+														</div>
+													</div>
+													<div class="col-xxl-3 col-xl-3 col-lg-4 col-md-4 col-sm-4 col-12">
+														<div style="text-align: end">
+															<label for="inputCompanyName" class="form-label">+237656434231</label>
+														</div>
+													</div>
+													<div class="col-xxl-3 col-xl-3 col-lg-4 col-md-4 col-sm-4 col-12">
+														<div class="mb-3">
+															<div style="text-align: end">
+																<label for="inputCompanyName" class="form-label">51 Nov Street Dowtown LA</label>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-12">
+												<div class="row">
+													<div class="col-xxl-3 col-xl-3 col-lg-4 col-md-4 col-sm-4 col-12">
+														<div class="mb-3">
+															<div style="text-align: start; display: flex">
+																<label style="font-size: 20px; font-weight: 700; color: #3688fa; text-wrap: nowrap">Invoice To: </label>
+																<span> <input required="" id="validationCustom01" type="text" class="form-control" placeholder="patient name" /></span>
+															</div>
+															<div class="input-group" style="text-align: start; margin: 5px 0">
+																<span class="input-group-text">+237 </span>
+																<input required="" type="number" class="form-control" />
+															</div>
+															<div style="text-align: start">
+																<input required="" type="number" class="form-control" placeholder="Adresse Ex: 51 Nov Street Dowtown LA" />
+															</div>
+														</div>
+													</div>
+													<div class="col-xxl-3 col-xl-3 col-lg-4 col-md-4 col-sm-4 col-12"></div>
+													<div class="col-xxl-3 col-xl-3 col-lg-4 col-md-4 col-sm-4 col-12"></div>
+													<div class="col-xxl-3 col-xl-3 col-lg-4 col-md-4 col-sm-4 col-12">
+														<div class="mb-3">
+															<div style="text-align: end; display: flex">
+																<label style="text-wrap: nowrap">Invoice Date: </label>
+																<div>
+																	<input id="date" required="" type="text" class="form-control datepicker-time-24" />
+																</div>
+															</div>
+															<div style="text-align: end; display: flex; margin: 5px">
+																<label style="text-wrap: nowrap">Invoice No :</label>
+																<input required="" type="number" class="form-control" />
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-12">
+												<div class="row">
+													<div style="width: max-content" class="col-xxl-3 col-xl-3 col-lg-4 col-md-4 col-sm-4 col-12">
+														<div class="mb-3" style="width: max-content">
+															<div style="text-align: start; display: flex; width: max-content">
+																<label style="font-size: 20px; font-weight: 700; color: black">Statut: </label>
+																<label onmousemove="paid(0)" onclick="paid(0)" class="statutPaid statut">PAID</label>
+																<label
+																	onmousemove="paid(1)"
+																	onclick="paid(1)"
+																	class="statutUnpaidHover statut"
+																	style="
+																		font-size: 17px;
+																		font-weight: 500;
+																		padding: 6px 30px;
+																		/* background-color: #2954a2; */
+																		border-radius: 4px;
+																		/* color: white; */
+																		margin-left: 35px;
+																	"
+																	>UNPAID</label
+																>
+															</div>
+														</div>
+													</div>
+													<div class="col-xxl-3 col-xl-3 col-lg-4 col-md-4 col-sm-4 col-12"></div>
+													<div class="col-xxl-3 col-xl-3 col-lg-4 col-md-4 col-sm-4 col-12"></div>
+													<div class="col-xxl-3 col-xl-3 col-lg-4 col-md-4 col-sm-4 col-12"></div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div style="z-index: 1; width: 100%" class="card-body">
+										<!-- Row start -->
+
+										<div class="table-responsive">
+											<table class="table m-0">
+												<thead>
+													<tr>
+														<th>ID</th>
+														<th>SERVICES</th>
+														<th>DESIGNATION</th>
+														<th>PRIX UNITAIRE</th>
+														<th>QTE</th>
+														<th>TOTAL</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>1</td>
+														<td>
+															<input required="" id="validationCustom01" type="text" class="form-control" placeholder="patient name" />
+														</td>
+														<td>
+															<input required="" id="validationCustom01" type="number" class="form-control" placeholder="patient name" />
+														</td>
+														<td>
+															<div class="input-group">
+																<input type="number" class="form-control" id="input-numeral-thousand" />
+															</div>
+														</td>
+														<td>
+															<input type="number" class="form-control" id="input-numeral-thousand" />
+														</td>
+														<td><span>2000</span><span>fcfa</span></td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+										<div class="row mt-4">
+											<div class="col-xxl-3 col-xl-3 col-lg-4 col-md-4 col-sm-4 col-12"></div>
+											<div class="col-xxl-3 col-xl-3 col-lg-4 col-md-4 col-sm-4 col-12"></div>
+											<div class="col-xxl-3 col-xl-3 col-lg-4 col-md-4 col-sm-4 col-12"></div>
+											<div class="col-xxl-3 col-xl-3 col-lg-4 col-md-4 col-sm-4 col-12">
+												<div class="mb-3">
+													<div style="text-align: end; display: flex">
+														<label
+															style="
+																font-size: 17px;
+																font-weight: 500;
+																padding: 6px 30px;
+																background-color: #2954a2;
+																/* border-radius: 4px; */
+																color: white;
+																/* margin-left: 35px; */
+																text-wrap: nowrap;
+															"
+															>TOTAL DUE:
+														</label>
+														<label
+															style="
+																font-size: 17px;
+																font-weight: 500;
+																padding: 6px 30px;
+																background-color: #2954a2;
+																/* border-radius: 4px; */
+																color: white;
+																/* margin-left: 35px; */
+																text-wrap: nowrap;
+															"
+															>12450 XAF</label
+														>
+													</div>
+													<div style="text-align: end; display: flex">
+														<label
+															style="
+																font-size: 14px;
+																font-weight: 500;
+																padding: 6px 30px;
+																background-color: #2954a2;
+																/* border-radius: 4px; */
+																color: white;
+																/* margin-left: 35px; */
+																text-wrap: nowrap;
+															"
+															>Remains To Be Paid:</label
+														>
+														<label
+															style="
+																font-size: 17px;
+																font-weight: 500;
+																padding: 6px 30px;
+																background-color: #2954a2;
+																/* border-radius: 4px; */
+																color: white;
+																/* margin-left: 35px; */
+																text-wrap: nowrap;
+															"
+															>0 XAF</label
+														>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- Row end -->
+									</div>
+								</div>
+								<!-- Card end -->
+							</div>
+						</div>
+						<!-- Row end -->
+					</div>
+					<!-- Content wrapper end -->
+
+					<!-- App Footer start -->
+					<div class="app-footer">
+						<span>© Arise admin 2023</span>
+					</div>
+					<!-- App footer end -->
+				</div>
+				<!-- Content wrapper scroll end -->
+			</div>
+			<!-- *************
+				************ Main container end *************
+			************* -->
+		</div>
+		<script>
+			let statut = document.getElementsByClassName("statut");
+
+			let paid = (val) => {
+				if (val == 0) {
+					statut[0].className = "statutPaidHover statutPaid statut";
+					statut[1].className = "  statut";
+				}
+				if (val == 1) {
+					statut[0].className = " statutPaid statut";
+					statut[1].className = " statutUnpaidHover statut";
+				}
+				console.log("appeler");
+			};
+		</script>
+		<!-- Page wrapper end -->
+
+		<!-- *************
+			************ Required JavaScript Files *************
+		************* -->
+		<!-- Required jQuery first, then Bootstrap Bundle JS -->
+		<script src="{{ url_for('static', filename='assets/js/jquery.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/js/bootstrap.bundle.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/js/modernizr.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/js/moment.js') }}"></script>
+
+		<!-- *************
+			************ Vendor Js Files *************
+		************* -->
+
+		<!-- Overlay Scroll JS -->
+		<script src="{{ url_for('static', filename='assets/vendor/overlay-scroll/jquery.overlayScrollbars.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/vendor/overlay-scroll/custom-scrollbar.js') }}"></script>
+
+		<!-- Input Mask JS -->
+		<script src="{{ url_for('static', filename='assets/vendor/input-masks/cleave.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/vendor/input-masks/cleave-phone.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/vendor/input-masks/cleave-custom.js') }}"></script>
+
+		<!-- Bootstrap Select JS -->
+		<script src="{{ url_for('static', filename='assets/vendor/bs-select/bs-select.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/vendor/bs-select/bs-select-custom.js') }}"></script>
+
+		<!-- Date Range JS -->
+		<script src="{{ url_for('static', filename='assets/vendor/daterange/daterange.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/vendor/daterange/custom-daterange.js') }}"></script>
+
+		<!-- Main Js Required -->
+		<script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+	</body>
+</html>

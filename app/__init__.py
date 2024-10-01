@@ -33,6 +33,10 @@ def create_app():
     from .patient import patient as patient_blueprint
     app.register_blueprint(patient_blueprint, url_prefix='/patient')
 
+    # cashier Blueprint
+    from .cashier import cashier as cashier_blueprint
+    app.register_blueprint(cashier_blueprint, url_prefix='/cashier')
+
     # Register appointment and doctor blueprints with URL prefixes
 
 

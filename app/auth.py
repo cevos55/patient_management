@@ -57,8 +57,12 @@ def login():
                 return redirect(url_for('nurse.nurse_dashboard'))
             elif user[3] == 'secretary':
                 return redirect(url_for('secretary.secretary_dashboard'))
+            # elif user[3] == 'cashier':
+            #     return redirect(url_for('cashier.cashier_dashboard'))
+            # elif user[3] == 'patient':
+            #     return redirect(url_for('patient.patient_dashboard'))
             elif user[3] == 'patient':
-                return redirect(url_for('patient.patient_dashboard'))
+                return redirect(url_for('cashier.cashier_dashboard'))
         else:
             flash('Échec de la connexion. Vérifiez votre nom d’utilisateur et/ou mot de passe.')
     return render_template('auth/login.html')
